@@ -1,0 +1,44 @@
+[
+  {
+    "_id": {
+      "$oid": "66263526f50c2e548501f285"
+    },
+    "title": "Sofa",
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1683121158319-acc40c6ef3b2?q=80&w=1432&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "_id": {
+      "$oid": "66263526f50c2e548501f286"
+    },
+    "title": "Living Room",
+    "thumbnail": "https://media.istockphoto.com/id/1490571644/photo/digitally-generated-image-of-a-living-room-with-a-wooden-floor.jpg?s=1024x1024&w=is&k=20&c=tp5IsCcwGEzCJlHPwpUVGUe5os_QFumjd71Uar0t5_U="
+  },
+  {
+    "_id": {
+      "$oid": "66263526f50c2e548501f287"
+    },
+    "title": "Bed Room",
+    "thumbnail": "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "_id": {
+      "$oid": "66263526f50c2e548501f288"
+    },
+    "title": "Outdoor",
+    "thumbnail": "https://media.istockphoto.com/id/2024235428/photo/empty-cafe-exterior-with-tables-and-chairs.jpg?s=1024x1024&w=is&k=20&c=lOkgL9xaVStEZnMShCP_dfcIzK592IbkFeWt1QobH_w="
+  },
+  {
+    "_id": {
+      "$oid": "66263526f50c2e548501f289"
+    },
+    "title": "Outdoor",
+    "thumbnail": "https://media.istockphoto.com/id/547031212/photo/patio-with-a-table-chairs.jpg?s=1024x1024&w=is&k=20&c=3EoOzocObg-4aN3M8BOmY88vx6lpuUF5ibe6l8c4bZg="
+  },
+  {
+    "_id": {
+      "$oid": "66263526f50c2e548501f290"
+    },
+    "title": "Mattress",
+    "thumbnail": "https://images.unsplash.com/photo-1613688684407-cc73e44fdc74?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

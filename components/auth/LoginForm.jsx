@@ -1,7 +1,33 @@
+'use client'
+
+import { login } from '@/app/actions'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+
 export default function LoginForm() {
+  const [error, setError] = useState('')
+  const router = useRouter()
+
+  const handleLogin = async (e) => {
+    e.preventDefault()
+    try {
+      const formData = new FormData(e.currentTarget)
+      const response = await login(formData)
+      console.log(response)
+      if (!!response.error) {
+        setError(response.error)
+      } else {
+        router.push('/')
+      }
+    } catch (err) {
+      setError(err)
+    }
+  }
   return (
     <>
-      <form action="#" method="post" autocomplete="off">
+      {error && <div className="text-xl text-red-500 text-center">{error}</div>}
+      <form method="post" onSubmit={handleLogin}>
         <div className="space-y-2">
           <div>
             <label for="email" className="text-gray-600 mb-2 block">
@@ -40,9 +66,9 @@ export default function LoginForm() {
               Remember me
             </label>
           </div>
-          <a href="#" className="text-primary">
+          <Link href="#" className="text-primary">
             Forgot password
-          </a>
+          </Link>
         </div>
         <div className="mt-4">
           <button

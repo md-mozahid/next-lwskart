@@ -1,10 +1,48 @@
+'use client'
+
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+
 export default function RegisterForm() {
+  const [error, setError] = useState('')
+
+  const router = useRouter()
+
+  async function handleCreate(e) {
+    e.preventDefault()
+
+    try {
+      const formData = new FormData(e.currentTarget)
+      const name = formData.get('name')
+      const email = formData.get('email')
+      const password = formData.get('password')
+      const confirm = formData.get('confirm')
+
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application.json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          confirm,
+        }),
+      })
+      response.status === 201 && router.push('/login')
+    } catch (err) {
+      setError(err.message)
+    }
+  }
   return (
     <>
-      <form action="#" method="post" autocomplete="off">
+      <div className="text-xl text-red-500 text-center">{error && error}</div>
+      <form method="post" onSubmit={handleCreate}>
         <div className="space-y-2">
           <div>
-            <label for="name" className="text-gray-600 mb-2 block">
+            <label htmlFor="name" className="text-gray-600 mb-2 block">
               Full Name
             </label>
             <input
@@ -16,7 +54,7 @@ export default function RegisterForm() {
             />
           </div>
           <div>
-            <label for="email" className="text-gray-600 mb-2 block">
+            <label htmlFor="email" className="text-gray-600 mb-2 block">
               Email address
             </label>
             <input
@@ -28,7 +66,7 @@ export default function RegisterForm() {
             />
           </div>
           <div>
-            <label for="password" className="text-gray-600 mb-2 block">
+            <label htmlFor="password" className="text-gray-600 mb-2 block">
               Password
             </label>
             <input
@@ -40,7 +78,7 @@ export default function RegisterForm() {
             />
           </div>
           <div>
-            <label for="confirm" className="text-gray-600 mb-2 block">
+            <label htmlFor="confirm" className="text-gray-600 mb-2 block">
               Confirm password
             </label>
             <input
@@ -64,9 +102,9 @@ export default function RegisterForm() {
               for="aggrement"
               className="text-gray-600 ml-3 cursor-pointer">
               I have read and agree to the{' '}
-              <a href="#" className="text-primary">
+              <Link href="#" className="text-primary">
                 terms & conditions
-              </a>
+              </Link>
             </label>
           </div>
         </div>
