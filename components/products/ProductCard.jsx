@@ -1,9 +1,13 @@
 import { auth } from '@/auth'
 import Image from 'next/image'
 import Link from 'next/link'
+import AddToCart from './AddToCart'
+import WishListItemQty from '../cart/WishListItemQty'
+import { useCart } from '@/hooks/useCart'
 
 export default async function ProductCard({ product }) {
   const session = await auth()
+
   return (
     <div className="bg-white shadow rounded overflow-hidden group">
       <div className="relative">
@@ -23,12 +27,7 @@ export default async function ProductCard({ product }) {
             title="view product">
             <i className="fa-solid fa-magnifying-glass"></i>
           </Link>
-          <Link
-            href={session?.user ? '#' : '/login'}
-            className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-            title="add to wishlist">
-            <i className="fa-solid fa-heart"></i>
-          </Link>
+          <WishListItemQty product={product} session={session} />
         </div>
       </div>
       <div className="pt-4 pb-3 px-4">
@@ -66,11 +65,7 @@ export default async function ProductCard({ product }) {
           <div className="text-xs text-gray-500 ml-3">(150)</div>
         </div>
       </div>
-      <Link
-        href={session?.user ? '#' : '/login'}
-        className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">
-        Add to cart
-      </Link>
+      <AddToCart session={session} product={product} />
     </div>
   )
 }

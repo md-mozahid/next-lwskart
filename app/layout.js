@@ -1,12 +1,13 @@
-import Cart from '@/components/shared/Cart'
+import CartSection from '@/components/cart/CartSection'
 import Copyright from '@/components/shared/Copyright'
 import Footer from '@/components/shared/Footer'
 import Logo from '@/components/shared/Logo'
 import Navbar from '@/components/shared/Navbar'
 import Search from '@/components/shared/Search'
+import CartProvider from '@/provider/CartProvider'
+import connectMongo from '@/services/connectMongo'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import connectMongo from '@/services/connectMongo'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,18 +21,20 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header class="py-4 shadow-sm bg-white">
-          <div class="container flex items-center justify-between">
-            <Logo />
-            <Search />
-            <Cart />
-          </div>
-        </header>
-        <Navbar />
-        {children}
-        <div id="modal-root-content" />
-        <Footer />
-        <Copyright />
+        <CartProvider>
+          <header className="py-4 shadow-sm bg-white">
+            <div className="container flex items-center justify-between">
+              <Logo />
+              <Search />
+              <CartSection />
+            </div>
+          </header>
+          <Navbar />
+          {children}
+          <div id="modal-root-content" />
+          <Footer />
+          <Copyright />
+        </CartProvider>
       </body>
     </html>
   )
