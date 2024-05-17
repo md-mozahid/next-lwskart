@@ -22,7 +22,7 @@ const productSchema = new Schema(
       default: 0,
     },
     stock: {
-      type: String,
+      type: Number,
       required: true,
     },
     brand: {

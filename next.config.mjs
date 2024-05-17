@@ -4,22 +4,18 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'www.istockphoto.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'media.istockphoto.com',
-      },
-      {
-        protocol: 'https',
         hostname: 'images.unsplash.com',
       },
       {
         protocol: 'https',
-        hostname: 'plus.unsplash.com',
+        hostname: 'example.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'imgs.search.brave.com',
       },
     ],
   },
 }
 
-export default nextConfig;
+export default nextConfig

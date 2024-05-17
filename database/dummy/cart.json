@@ -20,3 +20,53 @@
     "id": 1
   }
 ]
+[
+  {
+    "title": "",
+    "description": "",
+    "price": ,
+    "discountPercentage":,
+    "rating": ,
+    "stock": ,
+    "brand": "",
+    "category": "furniture",
+    "thumbnail": "",
+    "images": [
+    ],
+    "productId": ,
+    "quantity": ,
+    "user": ,
+    "id": 
+  }
+]
+
+
+
+
+// *****************************************
+need more 10 product in below example,
+{
+    "_id": {
+      "$oid": ""
+    },
+    "title": "",
+    "quantity": ,
+    "price": ,
+    "discountPrice": ,
+    "stock": "in stock",
+    "brand": "",
+    "category": "shoe",
+    "size": [],
+    "color": [],
+    "productCode": "",
+    "description": "",
+    "thumbNail": "",
+    "images": [],
+    "overview": ""
+
+    keyword,
+    tag
+  },
+
+
+

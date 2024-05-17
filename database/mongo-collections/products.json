@@ -1,140 +1,639 @@
 [
   {
-    "_id": {
-      "$oid": "66263526f50c2e548501f285"
-    },
-    "title": "Mock up poster frame in modern vintage interior",
-    "quantity": 150,
-    "price": 150,
-    "discountPrice": 126,
-    "stock": "in stock",
-    "brand": "Apex",
-    "category": ["sofa", "bedroom"],
-    "productCode": "BE45VGRT",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.",
-    "thumbNail": "https://www.istockphoto.com/photo/mock-up-poster-frame-in-modern-vintage-interior-living-room-with-white-leather-sofa-gm1083390258-290647441",
+    "_id": { "$oid": "60a0e6f523b9b2f739024e5b" },
+    "title": "Queen Size Bed",
+    "quantity": 10,
+    "price": 899.99,
+    "discountPrice": 799.99,
+    "stock": 10,
+    "brand": "DreamyNights",
+    "category": "bedroom",
+    "productCode": "QSB1001",
+    "description": "A comfortable queen size bed with a sturdy frame and elegant design.",
+    "thumbnail": "https://imgs.search.brave.com/ild5PnXaMdX6BoUcdw0iKMNKbonhIHyKUZwtiOu8BnI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9wbHVz/LnVuc3BsYXNoLmNv/bS9wcmVtaXVtX3Bo/b3RvLTE2NzU2MTU5/NDk3NDMtNmVjOTMw/ZDg3NDEwP3E9ODAm/dz0xMDAwJmF1dG89/Zm9ybWF0JmZpdD1j/cm9wJml4bGliPXJi/LTQuMC4zJml4aWQ9/TTN3eE1qQTNmREI4/TUh4elpXRnlZMmg4/TVRkOGZHSmxaSEp2/YjIxOFpXNThNSHg4/TUh4OGZEQT0",
     "images": [
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/fe905c46-4243-44bf-bd59-bc8b463326ea.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0c7bca68-276a-490d-87d7-d204f2d19735.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/50468371-c5a4-4827-84b3-5091f84d7034.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0f0fa575-2ab3-4c1e-a4ba-2b8401f9a505.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/d316a194-076f-4032-a5d5-fd96542a683f.jpeg?im_w=240"
+      "https://example.com/images/queen-size-bed1.jpg",
+      "https://example.com/images/queen-size-bed2.jpg"
     ],
-    "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sit nobis saepe enim iusto quod possimus cupiditate reiciendis necessitatibus, similique consequatur quibusdam nulla cumque quisquam facilis?\nRecusandae assumenda, quam quaerat voluptas aut vel dignissimos et. Itaque voluptate cum, quidem ipsam autem eaque quo possimus dolorem nisi dolore commodi. Rem, vero labore dolorum obcaecati sequi corporis magni quos hic, delectus velit, inventore tenetur. Voluptatibus, ipsum, aspernatur ducimus sint odit in mollitia nulla sunt possimus deleniti dolore error excepturi, distinctio delectus recusandae."
+    "overview": "Elegant queen size bed with a comfortable mattress and solid frame."
   },
   {
-    "_id": {
-      "$oid": "66263526f50c2e548501f286"
-    },
-    "title": "Living room & luxury interior wall for classic blue colo",
-    "quantity": 150,
-    "price": 150,
-    "discountPrice": 126,
-    "stock": "in stock",
-    "brand": "Apex",
-    "category": ["sofa", "bedroom"],
-    "productCode": "BE45VGRT",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.",
-    "thumbNailUrl": "https://www.istockphoto.com/photo/living-room-luxury-interior-wall-for-classic-blue-color-trend-2020-gm1194773800-340337218",
-    "gallery": [
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/fe905c46-4243-44bf-bd59-bc8b463326ea.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0c7bca68-276a-490d-87d7-d204f2d19735.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/50468371-c5a4-4827-84b3-5091f84d7034.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0f0fa575-2ab3-4c1e-a4ba-2b8401f9a505.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/d316a194-076f-4032-a5d5-fd96542a683f.jpeg?im_w=240"
+    "_id": { "$oid": "60a0e70f23b9b2f739024e5c" },
+    "title": "King Size Bed",
+    "quantity": 5,
+    "price": 1199.99,
+    "discountPrice": 1049.99,
+    "stock": 10,
+    "brand": "RoyalRest",
+    "category": "bedroom",
+    "productCode": "KSB2002",
+    "description": "A spacious king size bed perfect for a luxurious bedroom experience.",
+    "thumbnail": "https://imgs.search.brave.com/fyLi6FxG2Zh1qj6AdDI0Odp4MVs19DvN2p6kKM_o8YI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTA1/Mzk0NDM1OC9waG90/by9jb3p5LWJlZHJv/b20taW50ZXJpb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PUNnN1BDbU5NVkJ1/Mk9RdkxDWmtKeXRo/YVdVcHFaakdyRE8w/bjBCVlhoSWc9",
+    "images": [
+      "https://example.com/images/king-size-bed1.jpg",
+      "https://example.com/images/king-size-bed2.jpg"
     ],
-    "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sit nobis saepe enim iusto quod possimus cupiditate reiciendis necessitatibus, similique consequatur quibusdam nulla cumque quisquam facilis?\nRecusandae assumenda, quam quaerat voluptas aut vel dignissimos et. Itaque voluptate cum, quidem ipsam autem eaque quo possimus dolorem nisi dolore commodi. Rem, vero labore dolorum obcaecati sequi corporis magni quos hic, delectus velit, inventore tenetur. Voluptatibus, ipsum, aspernatur ducimus sint odit in mollitia nulla sunt possimus deleniti dolore error excepturi, distinctio delectus recusandae."
+    "overview": "Luxurious king size bed with premium materials and craftsmanship."
   },
   {
-    "_id": {
-      "$oid": "66263526f50c2e548501f287"
-    },
-    "title": "Blue modern living room stock photo",
-    "quantity": 150,
-    "price": 150,
-    "discountPrice": 126,
-    "stock": "in stock",
-    "brand": "Apex",
-    "category": ["sofa", "bedroom"],
-    "productCode": "BE45VGRT",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.",
-    "thumbNailUrl": "https://www.istockphoto.com/photo/blue-modern-living-room-gm667165176-121704969",
-    "gallery": [
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/fe905c46-4243-44bf-bd59-bc8b463326ea.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0c7bca68-276a-490d-87d7-d204f2d19735.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/50468371-c5a4-4827-84b3-5091f84d7034.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0f0fa575-2ab3-4c1e-a4ba-2b8401f9a505.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/d316a194-076f-4032-a5d5-fd96542a683f.jpeg?im_w=240"
+    "_id": { "$oid": "60a0e72623b9b2f739024e5d" },
+    "title": "Nightstand",
+    "quantity": 20,
+    "price": 149.99,
+    "discountPrice": 129.99,
+    "stock": 10,
+    "brand": "FurnitureBasics",
+    "category": "bedroom",
+    "productCode": "NS3003",
+    "description": "A stylish nightstand with a drawer and open shelf for storage.",
+    "thumbnail": "https://imgs.search.brave.com/EQmz-FMIUA6kFurW-keJFiRh9s-YvmoiO6TpA1YpYBQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/OTg5Mjg2MzYxMzUt/ZDE0NjAwNmZmNGJl/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRCOGZH/SmxaSEp2YjIxOFpX/NThNSHg4TUh4OGZE/QT0",
+    "images": [
+      "https://example.com/images/nightstand1.jpg",
+      "https://example.com/images/nightstand2.jpg"
     ],
-    "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sit nobis saepe enim iusto quod possimus cupiditate reiciendis necessitatibus, similique consequatur quibusdam nulla cumque quisquam facilis?\nRecusandae assumenda, quam quaerat voluptas aut vel dignissimos et. Itaque voluptate cum, quidem ipsam autem eaque quo possimus dolorem nisi dolore commodi. Rem, vero labore dolorum obcaecati sequi corporis magni quos hic, delectus velit, inventore tenetur. Voluptatibus, ipsum, aspernatur ducimus sint odit in mollitia nulla sunt possimus deleniti dolore error excepturi, distinctio delectus recusandae."
+    "overview": "Convenient nightstand for bedside storage and decor."
   },
   {
-    "_id": {
-      "$oid": "66263526f50c2e548501f288"
-    },
-    "title": "Modern living room interior with sofa and green plants,table stock photo",
-    "quantity": 150,
-    "price": 150,
-    "discountPrice": 126,
-    "stock": "in stock",
-    "brand": "Apex",
-    "category": ["sofa", "bedroom"],
-    "productCode": "BE45VGRT",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.",
-    "thumbNailUrl": "https://www.istockphoto.com/photo/modern-living-room-interior-with-sofa-and-green-plants-table-gm1148514491-310184402",
-    "gallery": [
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/fe905c46-4243-44bf-bd59-bc8b463326ea.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0c7bca68-276a-490d-87d7-d204f2d19735.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/50468371-c5a4-4827-84b3-5091f84d7034.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0f0fa575-2ab3-4c1e-a4ba-2b8401f9a505.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/d316a194-076f-4032-a5d5-fd96542a683f.jpeg?im_w=240"
+    "_id": { "$oid": "60a0e73d23b9b2f739024e5e" },
+    "title": "Wardrobe",
+    "quantity": 7,
+    "price": 699.99,
+    "discountPrice": 649.99,
+    "stock": 10,
+    "brand": "ClosetMasters",
+    "category": "bedroom",
+    "productCode": "WB4004",
+    "description": "A spacious wardrobe with multiple compartments for organized storage.",
+    "thumbnail": "https://imgs.search.brave.com/X0EybjtiegLiWsO1tFK7h44v8qSnfHkN3Moz9hEqppA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM5/MDIzMzk4NC9waG90/by9tb2Rlcm4tbHV4/dXJ5LWJlZHJvb20u/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXBvOTFwb3FZb1FU/YkhVcE8xTEQxSGN4/Q0ZaVnBSRy1sb0FN/V1pUN1lSZTQ9",
+    "images": [
+      "https://example.com/images/wardrobe1.jpg",
+      "https://example.com/images/wardrobe2.jpg"
     ],
-    "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sit nobis saepe enim iusto quod possimus cupiditate reiciendis necessitatibus, similique consequatur quibusdam nulla cumque quisquam facilis?\nRecusandae assumenda, quam quaerat voluptas aut vel dignissimos et. Itaque voluptate cum, quidem ipsam autem eaque quo possimus dolorem nisi dolore commodi. Rem, vero labore dolorum obcaecati sequi corporis magni quos hic, delectus velit, inventore tenetur. Voluptatibus, ipsum, aspernatur ducimus sint odit in mollitia nulla sunt possimus deleniti dolore error excepturi, distinctio delectus recusandae."
+    "overview": "Large wardrobe with ample space for clothes and accessories."
   },
   {
-    "_id": {
-      "$oid": "66263526f50c2e548501f289"
-    },
-    "title": "Stylish living room interior with a large white sofa and floor lamp",
-    "quantity": 150,
-    "price": 150,
-    "discountPrice": 126,
-    "stock": "in stock",
-    "brand": "Apex",
-    "category": ["sofa", "bedroom"],
-    "productCode": "BE45VGRT",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.",
-    "thumbNailUrl": "https://www.istockphoto.com/photo/stylish-living-room-interior-with-a-large-white-sofa-and-floor-lamp-gm1285153157-382076905",
-    "gallery": [
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/fe905c46-4243-44bf-bd59-bc8b463326ea.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0c7bca68-276a-490d-87d7-d204f2d19735.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/50468371-c5a4-4827-84b3-5091f84d7034.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0f0fa575-2ab3-4c1e-a4ba-2b8401f9a505.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/d316a194-076f-4032-a5d5-fd96542a683f.jpeg?im_w=240"
+    "_id": { "$oid": "60a0eaf023b9b2f739024e79" },
+    "title": "Men's Casual T-Shirt",
+    "quantity": 50,
+    "price": 19.99,
+    "discountPrice": 14.99,
+    "stock": 10,
+    "brand": "StyleHub",
+    "category": "cloth",
+    "size": ["S", "M", "L", "XL"],
+    "color": ["Red", "Blue", "Black"],
+    "productCode": "CT1001",
+    "description": "A comfortable and stylish casual t-shirt for men.",
+    "thumbnail": "https://imgs.search.brave.com/KB12XeZMzbCPq5yWpy9XASV0XEHwXVjqmsICMdaphFA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFlbFJ0VWlubEwu/anBn",
+    "images": [
+      "https://example.com/images/mens-casual-tshirt1.jpg",
+      "https://example.com/images/mens-casual-tshirt2.jpg"
     ],
-    "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sit nobis saepe enim iusto quod possimus cupiditate reiciendis necessitatibus, similique consequatur quibusdam nulla cumque quisquam facilis?\nRecusandae assumenda, quam quaerat voluptas aut vel dignissimos et. Itaque voluptate cum, quidem ipsam autem eaque quo possimus dolorem nisi dolore commodi. Rem, vero labore dolorum obcaecati sequi corporis magni quos hic, delectus velit, inventore tenetur. Voluptatibus, ipsum, aspernatur ducimus sint odit in mollitia nulla sunt possimus deleniti dolore error excepturi, distinctio delectus recusandae."
+    "overview": "High-quality cotton t-shirt suitable for everyday wear."
   },
   {
-    "_id": {
-      "$oid": "66263526f50c2e548501f290"
-    },
-    "title": "Blue and brown modern living room",
-    "quantity": 150,
-    "price": 150,
-    "discountPrice": 126,
-    "stock": "in stock",
-    "brand": "Apex",
-    "category": ["sofa", "bedroom"],
-    "productCode": "BE45VGRT",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro.",
-    "thumbNailUrl": "https://www.istockphoto.com/photo/blue-and-brown-modern-living-room-gm679352412-124451903",
-    "gallery": [
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/fe905c46-4243-44bf-bd59-bc8b463326ea.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0c7bca68-276a-490d-87d7-d204f2d19735.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/50468371-c5a4-4827-84b3-5091f84d7034.jpeg?im_w=240",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/0f0fa575-2ab3-4c1e-a4ba-2b8401f9a505.jpeg?im_w=480",
-      "https://a0.muscache.com/im/pictures/miso/Hosting-1113560823442253330/original/d316a194-076f-4032-a5d5-fd96542a683f.jpeg?im_w=240"
+    "_id": { "$oid": "60a0eb0723b9b2f739024e7a" },
+    "title": "Women's Summer Dress",
+    "quantity": 30,
+    "price": 49.99,
+    "discountPrice": 39.99,
+    "stock": 10,
+    "brand": "Fashionista",
+    "category": "cloth",
+    "size": ["S", "M", "L"],
+    "color": ["Yellow", "Green", "White"],
+    "productCode": "SD2002",
+    "description": "A beautiful summer dress perfect for sunny days.",
+    "thumbnail": "https://imgs.search.brave.com/NyCpZ3boaOKxyws5cQIjGFLmM6zR3V1H_bEYna7HN-A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/ODc0MTE0L3Bob3Rv/L2dyZWVuLXQtc2hp/cnQuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPW5xSlVHd09Z/amNRZUR6eGZGeUVG/eFE2ZzczMkJTc1ZE/T0lKdWl0eXFtNkE9",
+    "images": [
+      "https://example.com/images/womens-summer-dress1.jpg",
+      "https://example.com/images/womens-summer-dress2.jpg"
     ],
-    "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sit nobis saepe enim iusto quod possimus cupiditate reiciendis necessitatibus, similique consequatur quibusdam nulla cumque quisquam facilis?\nRecusandae assumenda, quam quaerat voluptas aut vel dignissimos et. Itaque voluptate cum, quidem ipsam autem eaque quo possimus dolorem nisi dolore commodi. Rem, vero labore dolorum obcaecati sequi corporis magni quos hic, delectus velit, inventore tenetur. Voluptatibus, ipsum, aspernatur ducimus sint odit in mollitia nulla sunt possimus deleniti dolore error excepturi, distinctio delectus recusandae."
+    "overview": "Lightweight and flowy dress with vibrant colors."
+  },
+  {
+    "_id": { "$oid": "60a0eb1e23b9b2f739024e7b" },
+    "title": "Men's Formal Shirt",
+    "quantity": 40,
+    "price": 39.99,
+    "discountPrice": 29.99,
+    "stock": "in stock",
+    "brand": "ExecutiveWear",
+    "category": "cloth",
+    "size": ["M", "L", "XL"],
+    "color": ["White", "Blue", "Gray"],
+    "productCode": "FS3003",
+    "description": "A sleek formal shirt for men, ideal for office wear.",
+    "thumbnail": "https://imgs.search.brave.com/5JCSv14NDqzVvh29BvvcmC_MrjHNuagfTAPy4sBq0UA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLXN0/YXRpYy5zbWFydHBo/b3RvLmNvbS9zdHJ1/Y3R1cmVkL3JlcG9z/aXRvcnlpbWFnZS9w/cm9kdWN0Y2F0ZWdv/cnkvZnVuX2lkZWFz/L3RzaGlydG1lbi90/b3BpbWFnZXMvMDAy/MC9pbWFnZS90c2hp/cnRzLWNhcnJvdXNl/bDIuanBn",
+    "images": [
+      "https://example.com/images/mens-formal-shirt1.jpg",
+      "https://example.com/images/mens-formal-shirt2.jpg"
+    ],
+    "overview": "Premium formal shirt with a perfect fit and finish."
+  },
+  {
+    "_id": { "$oid": "60a0eb3523b9b2f739024e7c" },
+    "title": "Women's Denim Jacket",
+    "quantity": 25,
+    "price": 69.99,
+    "discountPrice": 59.99,
+    "stock": 10,
+    "brand": "UrbanStyle",
+    "category": "cloth",
+    "size": ["S", "M", "L"],
+    "color": ["Blue", "Black"],
+    "productCode": "DJ4004",
+    "description": "A trendy denim jacket for women.",
+    "thumbnail": "https://imgs.search.brave.com/8O1AMIgEd7TY8GV5b3fREWeT7DmlTOijExigbWjDxW0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFjTnF3ejVscEwu/anBn",
+    "images": [
+      "https://example.com/images/womens-denim-jacket1.jpg",
+      "https://example.com/images/womens-denim-jacket2.jpg"
+    ],
+    "overview": "Stylish denim jacket with a modern fit."
+  },
+  {
+    "_id": { "$oid": "60a0e8e923b9b2f739024e65" },
+    "title": "Stainless Steel Cookware Set",
+    "quantity": 15,
+    "price": 249.99,
+    "discountPrice": 199.99,
+    "stock": 10,
+    "brand": "CookMaster",
+    "category": "kitchen",
+    "productCode": "SSC1001",
+    "description": "A complete set of stainless steel cookware for all your cooking needs.",
+    "thumbnail": "https://imgs.search.brave.com/VunVbKW-FYJaqSNj3lUMJb9koVOtRBKn0iG48LAb_9Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTcx/NTkxMTY1L3Bob3Rv/L25ldy1raXRjaGVu/LWluLW1vZGVybi1s/dXh1cnktaG9tZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/ZVJKWkhDRHhBUkwx/ald0bGtzSXZyUTNv/cHJNLVc2N3FTLTNh/alZoOVBKUT0",
+    "images": [
+      "https://example.com/images/cookware-set1.jpg",
+      "https://example.com/images/cookware-set2.jpg"
+    ],
+    "overview": "High-quality stainless steel cookware set with multiple pieces."
+  },
+  {
+    "_id": { "$oid": "60a0e90023b9b2f739024e66" },
+    "title": "Blender",
+    "quantity": 30,
+    "price": 99.99,
+    "discountPrice": 79.99,
+    "stock": 10,
+    "brand": "BlendPro",
+    "category": "kitchen",
+    "productCode": "BL2002",
+    "description": "A powerful blender perfect for smoothies, soups, and sauces.",
+    "thumbnail": "https://imgs.search.brave.com/shqUwc5ApM6e6QfVA-TumktO9cP9gWkYT_k78LPXsbI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM0/MzYyNzYzMC9waG90/by9ob21lLWtpdGNo/ZW4taW50ZXJpb3Iu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PXlISXpGcC1QRGpN/enZ2d1NIVnczVlgw/ZTRsR1Q0Y0Y5Y29f/QWhZbVgzQ1E9",
+    "images": [
+      "https://example.com/images/blender1.jpg",
+      "https://example.com/images/blender2.jpg"
+    ],
+    "overview": "Efficient blender with multiple speed settings and a durable build."
+  },
+  {
+    "_id": { "$oid": "60a0e91723b9b2f739024e67" },
+    "title": "Knife Set",
+    "quantity": 25,
+    "price": 129.99,
+    "discountPrice": 99.99,
+    "stock": 10,
+    "brand": "SharpEdge",
+    "category": "kitchen",
+    "productCode": "KS3003",
+    "description": "A premium knife set with sharp, durable blades and ergonomic handles.",
+    "thumbnail": "https://imgs.search.brave.com/7g539W8qjS2-CKFDxO1IOs9bu45B_cYhWFnWaQXujXM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTEx/MDk3MTk5L3Bob3Rv/L3BpY3R1cmUtb2Yt/cmVzdGF1cmFudC1r/aXRjaGVuLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1aZkFi/dWg4X2VDSmVfdWhi/azlGZ3JjRVBhbjh6/RW9yclRxY1lGX2tV/SUVFPQ",
+    "images": [
+      "https://example.com/images/knife-set1.jpg",
+      "https://example.com/images/knife-set2.jpg"
+    ],
+    "overview": "High-quality knife set suitable for all types of kitchen tasks."
+  },
+  {
+    "_id": { "$oid": "60a0e92e23b9b2f739024e68" },
+    "title": "Non-Stick Frying Pan",
+    "quantity": 40,
+    "price": 49.99,
+    "discountPrice": 39.99,
+    "stock": 10,
+    "brand": "PanPerfect",
+    "category": "kitchen",
+    "productCode": "NP4004",
+    "description": "A durable non-stick frying pan for easy cooking and cleaning.",
+    "thumbnail": "https://imgs.search.brave.com/-ITt5BhsO9BALmDAtwerG0osCfy4DUc0b03mJzupzQs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM1/MTIwMjkyL3Bob3Rv/L2ludGVyaW9yLW9m/LWEtYmVhdXRpZnVs/LWN1c3RvbS1raXRj/aGVuLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1OT1c0WnpD/SWhuQVktTEdyTHpf/OU51aFozYVI4QVA3/OWdNN25KVHRWUFBv/PQ",
+    "images": [
+      "https://example.com/images/frying-pan1.jpg",
+      "https://example.com/images/frying-pan2.jpg"
+    ],
+    "overview": "Versatile non-stick frying pan with a comfortable handle."
+  },
+  {
+    "_id": { "$oid": "60a0ea2023b9b2f739024e6f" },
+    "title": "Memory Foam Mattress",
+    "quantity": 20,
+    "price": 499.99,
+    "discountPrice": 399.99,
+    "stock": 10,
+    "brand": "ComfortSleep",
+    "category": "mattress",
+    "productCode": "MF1001",
+    "description": "A comfortable memory foam mattress that conforms to your body shape.",
+    "thumbnail": "https://imgs.search.brave.com/szYUhL-epi2tJdUfHCrtVWzYEQgs_X-bvKTkQTyewd0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTU2/ODE2NzE3Ny9waG90/by9tYXR0cmVzcy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/ZmI5ZTd5N1VvRmxs/UDZycmFHbmRnNTVR/bDBSak1BUjZSUm11/YkNSY3dyQT0",
+    "images": [
+      "https://example.com/images/memory-foam-mattress1.jpg",
+      "https://example.com/images/memory-foam-mattress2.jpg"
+    ],
+    "overview": "High-quality memory foam mattress for optimal comfort and support."
+  },
+  {
+    "_id": { "$oid": "60a0ea3723b9b2f739024e70" },
+    "title": "Innerspring Mattress",
+    "quantity": 15,
+    "price": 399.99,
+    "discountPrice": 349.99,
+    "stock": 10,
+    "brand": "SpringRest",
+    "category": "mattress",
+    "productCode": "IS2002",
+    "description": "A durable innerspring mattress providing excellent support and comfort.",
+    "thumbnail": "https://imgs.search.brave.com/MBHV5o3AkDGMy4lBMsfH04zKn-tQff-4NOexyuMRt2c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM0/NTM0NjQwNC9waG90/by9zaG93cm9vbS1i/ZWQtYW5kLW1hdHRy/ZXNzLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1VeWJteWk0/YWpMZWYyN3lhenhr/cnM1Yk9UaFVEUFhZ/Wkk3MkFtX2hhWDNv/PQ",
+    "images": [
+      "https://example.com/images/innerspring-mattress1.jpg",
+      "https://example.com/images/innerspring-mattress2.jpg"
+    ],
+    "overview": "Reliable innerspring mattress with enhanced durability and comfort."
+  },
+  {
+    "_id": { "$oid": "60a0ea4e23b9b2f739024e71" },
+    "title": "Gel Infused Mattress",
+    "quantity": 10,
+    "price": 549.99,
+    "discountPrice": 499.99,
+    "stock": 10,
+    "brand": "CoolSleep",
+    "category": "mattress",
+    "productCode": "GI3003",
+    "description": "A gel-infused mattress that helps regulate body temperature for a cool sleep.",
+    "thumbnail": "https://imgs.search.brave.com/cU8Bv3BcMWKQP_Y52yASiBtKDIaa_Uo8fkiwDdwtQ6k/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNDc3/NTIzNjU4L3Bob3Rv/L2JhY2tncm91bmQt/b2YtbWF0dHJlc3Mu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PVF2WmFveWtjZktI/YmxydThJMzZYeXVI/RHJ3QWtsdWdfUmxI/S3c5UHdHdHM9",
+    "images": [
+      "https://example.com/images/gel-infused-mattress1.jpg",
+      "https://example.com/images/gel-infused-mattress2.jpg"
+    ],
+    "overview": "Temperature-regulating gel mattress for a cooler and more comfortable sleep."
+  },
+  {
+    "_id": { "$oid": "60a0ea6523b9b2f739024e72" },
+    "title": "Hybrid Mattress",
+    "quantity": 18,
+    "price": 699.99,
+    "discountPrice": 649.99,
+    "stock": 10,
+    "brand": "FlexiSleep",
+    "category": "mattress",
+    "productCode": "HM4004",
+    "description": "A hybrid mattress combining memory foam and innerspring for ultimate comfort.",
+    "thumbnail": "https://imgs.search.brave.com/oibNH8yrr-cUtxQdfTzQIn1dhehaUZFGMuE79TL_cNo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by92/aWV3LTNkLW1hdHRy/ZXNzLXdpdGgtY2xv/dWRzXzIzLTIxNTEx/MTM0OTUuanBnP3Np/emU9NjI2JmV4dD1q/cGc",
+    "images": [
+      "https://example.com/images/hybrid-mattress1.jpg",
+      "https://example.com/images/hybrid-mattress2.jpg"
+    ],
+    "overview": "Hybrid mattress offering the best of both memory foam and innerspring technologies."
+  },
+  {
+    "_id": { "$oid": "60a0ea7c23b9b2f739024e73" },
+    "title": "Latex Mattress",
+    "quantity": 12,
+    "price": 799.99,
+    "discountPrice": 749.99,
+    "stock": 10,
+    "brand": "PureSleep",
+    "category": "mattress",
+    "productCode": "LM5005",
+    "description": "A natural latex mattress providing excellent support and durability.",
+    "thumbnail": "https://imgs.search.brave.com/d5nesCDGtAMV9UvmFr339jRSMasZ_DPrVOeBGIkNR20/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/NDAwMDMxNDUxNjkt/ZDEwYTJlODVhNjRk/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4T0h4OGJX/RjBkSEpsYzNOOFpX/NThNSHg4TUh4OGZE/QT0",
+    "images": [
+      "https://example.com/images/latex-mattress1.jpg",
+      "https://example.com/images/latex-mattress2.jpg"
+    ],
+    "overview": "Eco-friendly latex mattress with superior support and longevity."
+  },
+  {
+    "_id": { "$oid": "60a0ebd623b9b2f739024e83" },
+    "title": "Men's Running Shoes",
+    "quantity": 60,
+    "price": 89.99,
+    "discountPrice": 69.99,
+    "stock": 10,
+    "brand": "SportyFeet",
+    "category": "shoe",
+    "size": [8, 9, 10, 11],
+    "color": ["Black", "Blue", "Gray"],
+    "productCode": "RS1001",
+    "description": "Lightweight and comfortable running shoes for men.",
+    "thumbnail": "https://imgs.search.brave.com/BIa273fs1bhAW2RTjM9dVdI50xZ57q8pVKrcOGReGz8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MDUzNDg1MzI3NjAt/Njc1M2QyYzQzMzI5/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRCOGZI/Tm9iMlY4Wlc1OE1I/eDhNSHg4ZkRBPQ",
+    "images": [
+      "https://example.com/images/mens-running-shoes1.jpg",
+      "https://example.com/images/mens-running-shoes2.jpg"
+    ],
+    "overview": "High-performance running shoes with excellent cushioning."
+  },
+  {
+    "_id": { "$oid": "60a0ebed23b9b2f739024e84" },
+    "title": "Women's Ballet Flats",
+    "quantity": 40,
+    "price": 49.99,
+    "discountPrice": 39.99,
+    "stock": 10,
+    "brand": "ElegantSteps",
+    "category": "shoe",
+    "size": [5, 6, 7, 8],
+    "color": ["Red", "Black", "Beige"],
+    "productCode": "BF2002",
+    "description": "Elegant and comfortable ballet flats for women.",
+    "thumbnail": "https://imgs.search.brave.com/Llw6yn_tuRm7Y0iYE4x3IoF4-IPaSpftwUI_kIeqBng/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9z/aG9lc18xMzAzLTM2/MDguanBnP3NpemU9/NjI2JmV4dD1qcGc",
+    "images": [
+      "https://example.com/images/womens-ballet-flats1.jpg",
+      "https://example.com/images/womens-ballet-flats2.jpg"
+    ],
+    "overview": "Perfect ballet flats for casual and dressy occasions."
+  },
+  {
+    "_id": { "$oid": "60a0ec0423b9b2f739024e85" },
+    "title": "Men's Leather Boots",
+    "quantity": 20,
+    "price": 129.99,
+    "discountPrice": 109.99,
+    "stock": 10,
+    "brand": "UrbanBoots",
+    "category": "shoe",
+    "size": [9, 10, 11, 12],
+    "color": ["Brown", "Black"],
+    "productCode": "LB3003",
+    "description": "Durable and stylish leather boots for men.",
+    "thumbnail": "https://imgs.search.brave.com/FF_Tnpj_zgXjoUPLm_qV84uQ8vZy6VM63ar5LLGZSlU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTg1/MjQ2NzQ0L3Bob3Rv/L3Nwb3J0cy1zaG9l/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1kM0tLaW9VNlRM/T19peVVkQTBmLTFC/eEt4QkJ5Ul84dFUw/STZGcE1aelg4PQ",
+    "images": [
+      "https://example.com/images/mens-leather-boots1.jpg",
+      "https://example.com/images/mens-leather-boots2.jpg"
+    ],
+    "overview": "Premium leather boots with a modern design."
+  },
+  {
+    "_id": { "$oid": "60a0ec1b23b9b2f739024e86" },
+    "title": "Women's High Heels",
+    "quantity": 30,
+    "price": 99.99,
+    "discountPrice": 79.99,
+    "stock": 10,
+    "brand": "GlamourFeet",
+    "category": "shoe",
+    "size": [6, 7, 8, 9],
+    "color": ["Red", "Black", "Silver"],
+    "productCode": "HH4004",
+    "description": "Chic and stylish high heels for women.",
+    "thumbnail": "https://imgs.search.brave.com/pXaaP0ndooS-U1yzO38AMp2geMazs2gotj29KFPZOMg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MjY5NDczNDYxNjUt/NGMyMjg4ZGFkYzJh/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRWOGZI/Tm9iMlY4Wlc1OE1I/eDhNSHg4ZkRBPQ",
+    "images": [
+      "https://example.com/images/womens-high-heels1.jpg",
+      "https://example.com/images/womens-high-heels2.jpg"
+    ],
+    "overview": "Elegant high heels perfect for formal events."
+  },
+  {
+    "_id": { "$oid": "60a0ec3223b9b2f739024e87" },
+    "title": "Men's Casual Sneakers",
+    "quantity": 50,
+    "price": 69.99,
+    "discountPrice": 59.99,
+    "stock": 10,
+    "brand": "UrbanKicks",
+    "category": "shoe",
+    "size": [8, 9, 10, 11],
+    "color": ["White", "Black", "Gray"],
+    "productCode": "CS5005",
+    "description": "Trendy and comfortable casual sneakers for men.",
+    "thumbnail": "https://imgs.search.brave.com/nwRXvvVJs3N1F_M7VcZmDybh8ZCHKyy_-AgdxSSx_sE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MDAxODUzNjU5MjYt/M2EyY2UzY2RiOWVi/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRGOGZI/Tm9iMlZ6ZkdWdWZE/QjhmREI4Zkh3dw",
+    "images": [
+      "https://example.com/images/mens-casual-sneakers1.jpg",
+      "https://example.com/images/mens-casual-sneakers2.jpg"
+    ],
+    "overview": "Stylish sneakers suitable for everyday wear."
+  },
+  {
+    "_id": { "$oid": "60a0ec4923b9b2f739024e88" },
+    "title": "Women's Running Shoes",
+    "quantity": 40,
+    "price": 89.99,
+    "discountPrice": 69.99,
+    "stock": 10,
+    "brand": "SpeedySteps",
+    "category": "shoe",
+    "size": [6, 7, 8, 9],
+    "color": ["Pink", "Black", "Gray"],
+    "productCode": "RS6006",
+    "description": "Lightweight and supportive running shoes for women.",
+    "thumbnail": "https://imgs.search.brave.com/gca6YSpBpB6HmU2gBaJo0UzdaSs6O1vsCe51dCcYVfk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9jbG9zZS11cC1z/aG9lXzkxNzg1Ni0x/NzA0Ny5qcGc_c2l6/ZT02MjYmZXh0PWpw/Zw",
+    "images": [
+      "https://example.com/images/womens-running-shoes1.jpg",
+      "https://example.com/images/womens-running-shoes2.jpg"
+    ],
+    "overview": "Perfect running shoes for fitness enthusiasts."
+  },
+  {
+    "_id": { "$oid": "60a0ec6023b9b2f739024e89" },
+    "title": "Men's Dress Shoes",
+    "quantity": 30,
+    "price": 99.99,
+    "discountPrice": 79.99,
+    "stock": 10,
+    "brand": "EleganceFootwear",
+    "category": "shoe",
+    "size": [9, 10, 11, 12],
+    "color": ["Black", "Brown"],
+    "productCode": "DS7007",
+    "description": "Elegant and comfortable dress shoes for men.",
+    "thumbnail": "https://imgs.search.brave.com/jbJ3hj7bwuNE7cy-L_cLnZoSv4Gfy-CJdS7hcV-lC5Q/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MTY2OTYwMzg1NjIt/NTc0YzE4MDY2MDU1/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TWpCOGZH/MWxibk1sTWpCemFH/OWxmR1Z1ZkRCOGZE/QjhmSHd3",
+    "images": [
+      "https://example.com/images/mens-dress-shoes1.jpg",
+      "https://example.com/images/mens-dress-shoes2.jpg"
+    ],
+    "overview": "Classic dress shoes perfect for formal occasions."
+  },
+  {
+    "_id": { "$oid": "609b8e9a23b9b2f739024e51" },
+    "title": "Classic Leather Sofa",
+    "quantity": 5,
+    "price": 999.99,
+    "discountPrice": 899.99,
+    "stock": 10,
+    "brand": "LuxuryHome",
+    "category": "sofa",
+    "productCode": "CLS1001",
+    "description": "A luxurious leather sofa that adds elegance to any living room.",
+    "thumbnail": "https://imgs.search.brave.com/8PUwiHBxKBXsmKSJZfB-kErBAgAWV3foqn7R5rlAic8/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9tb2Rlcm4tc29m/YV8yMDQ5MTYtMjE2/Ny5qcGc_c2l6ZT02/MjYmZXh0PWpwZw",
+    "images": [
+      "https://example.com/images/classic-leather-sofa1.jpg",
+      "https://example.com/images/classic-leather-sofa2.jpg"
+    ],
+    "overview": "Elegant leather sofa with high comfort and style."
+  },
+  {
+    "_id": { "$oid": "609b8eb223b9b2f739024e52" },
+    "title": "Modern Sectional Sofa",
+    "quantity": 3,
+    "price": 1299.99,
+    "discountPrice": 1149.99,
+    "stock": 10,
+    "brand": "ComfortZone",
+    "category": "sofa",
+    "productCode": "MSS2002",
+    "description": "A spacious sectional sofa that provides ample seating for large families.",
+    "thumbnail": "https://imgs.search.brave.com/__duzah-ZlEh_C2nJrDj4eujUyoV8U26oH2aY9EfJlo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/OC8wMi8wMS8wMS9s/aXZpbmctcm9vbS0y/NTY5MzI1XzY0MC5q/cGc",
+    "images": [
+      "https://example.com/images/modern-sectional-sofa1.jpg",
+      "https://example.com/images/modern-sectional-sofa2.jpg",
+      "https://example.com/images/modern-sectional-sofa3.jpg"
+    ],
+    "overview": "Stylish and spacious sectional sofa with a modern design."
+  },
+  {
+    "_id": { "$oid": "609b8ec923b9b2f739024e53" },
+    "title": "Convertible Sofa Bed",
+    "quantity": 10,
+    "price": 799.99,
+    "discountPrice": 699.99,
+    "stock": 10,
+    "brand": "UrbanLiving",
+    "category": "sofa",
+    "productCode": "CSB3003",
+    "description": "A versatile sofa that easily converts into a comfortable bed.",
+    "thumbnail": "https://imgs.search.brave.com/6H6Tlsvwv2GBRM-s428z0NXMwhaQqhtSrlirE2lnYVE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/NzM4NjY5MjY0ODct/YTE4NjU1NThhOWNm/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRoOGZI/TnZabUY4Wlc1OE1I/eDhNSHg4ZkRBPQ",
+    "images": [
+      "https://example.com/images/convertible-sofa-bed1.jpg",
+      "https://example.com/images/convertible-sofa-bed2.jpg"
+    ],
+    "overview": "Practical sofa bed ideal for small spaces and guests."
+  },
+  {
+    "_id": { "$oid": "609b8ee223b9b2f739024e54" },
+    "title": "Recliner Sofa",
+    "quantity": 4,
+    "price": 1099.99,
+    "discountPrice": 999.99,
+    "stock": 10,
+    "brand": "RelaxHome",
+    "category": "sofa",
+    "productCode": "RCS4004",
+    "description": "A plush recliner sofa that provides the ultimate relaxation experience.",
+    "thumbnail": "https://imgs.search.brave.com/-Mh4zTM8eu89v9hB03bO2K2PsxBPViKWjyoQsVgpyUM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/MTIyMTI2MjExNDkt/MTA3ZmZlNTcyZDJm/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TVRKOGZI/TnZabUY4Wlc1OE1I/eDhNSHg4ZkRBPQ",
+    "images": [
+      "https://example.com/images/recliner-sofa1.jpg",
+      "https://example.com/images/recliner-sofa2.jpg"
+    ],
+    "overview": "Comfortable recliner sofa with multiple reclining positions."
+  },
+  {
+    "_id": { "$oid": "609b8efb23b9b2f739024e55" },
+    "title": "Fabric Sofa",
+    "quantity": 8,
+    "price": 699.99,
+    "discountPrice": 629.99,
+    "stock": 10,
+    "brand": "SoftTouch",
+    "category": "sofa",
+    "productCode": "FBS5005",
+    "description": "A cozy fabric sofa that is perfect for casual living spaces.",
+    "thumbnail": "https://imgs.search.brave.com/COGBFeqHumYcuic58Pze5G4FcmmQZO6ogVh9Sf9NcWM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9ncmF5LXNvZmEt/YnJvd24tbGl2aW5n/LXJvb20td2l0aC1j/b3B5LXNwYWNlXzEw/MjI0MjYtMjYwNS5q/cGc_c2l6ZT02MjYm/ZXh0PWpwZw",
+    "images": [
+      "https://example.com/images/fabric-sofa1.jpg",
+      "https://example.com/images/fabric-sofa2.jpg"
+    ],
+    "overview": "Comfortable and casual fabric sofa."
+  },
+  {
+    "_id": { "$oid": "609b8f1223b9b2f739024e56" },
+    "title": "Chesterfield Sofa",
+    "quantity": 2,
+    "price": 1499.99,
+    "discountPrice": 1349.99,
+    "stock": 10,
+    "brand": "RoyalElegance",
+    "category": "sofa",
+    "productCode": "CFS6006",
+    "description": "A classic Chesterfield sofa with tufted detailing and a timeless design.",
+    "thumbnail": "https://imgs.search.brave.com/ixx2ZcxFUWTvVthfY455Tno3L_Je9pC4T208Vm4j1KA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MzA1ODUzMDg1NzIt/ZjUzNDM4ZmM2ODRm/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4TWpCOGZI/TnZabUY4Wlc1OE1I/eDhNSHg4ZkRBPQ",
+    "images": [
+      "https://example.com/images/chesterfield-sofa1.jpg",
+      "https://example.com/images/chesterfield-sofa2.jpg",
+      "https://example.com/images/chesterfield-sofa3.jpg"
+    ],
+    "overview": "Elegant Chesterfield sofa with luxurious details."
+  },
+  {
+    "_id": { "$oid": "609b8f2b23b9b2f739024e57" },
+    "title": "L-Shaped Sofa",
+    "quantity": 6,
+    "price": 999.99,
+    "discountPrice": 899.99,
+    "stock": 10,
+    "brand": "LivingSpaces",
+    "category": "sofa",
+    "productCode": "LSS7007",
+    "description": "A spacious L-shaped sofa that fits perfectly in corner spaces.",
+    "thumbnail": "https://imgs.search.brave.com/eCcaMzIKncdmZ7Gx_YMULcIYwWCYyPQSZsuskfiDT9w/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/NDA1NzQxNjMwMjYt/NjQzZWEyMGFkZTI1/P3E9ODAmdz0xMDAw/JmF1dG89Zm9ybWF0/JmZpdD1jcm9wJml4/bGliPXJiLTQuMC4z/Jml4aWQ9TTN3eE1q/QTNmREI4TUh4elpX/RnlZMmg4Tkh4OGMy/OW1ZWHhsYm53d2ZI/d3dmSHg4TUE9PQ",
+    "images": [
+      "https://example.com/images/l-shaped-sofa1.jpg",
+      "https://example.com/images/l-shaped-sofa2.jpg"
+    ],
+    "overview": "Modern L-shaped sofa with ample seating space."
+  },
+  {
+    "_id": { "$oid": "609b8f4223b9b2f739024e58" },
+    "title": "Sleeper Sofa",
+    "quantity": 7,
+    "price": 899.99,
+    "discountPrice": 799.99,
+    "stock": 10,
+    "brand": "DreamHome",
+    "category": "sofa",
+    "productCode": "SPS8008",
+    "description": "A convenient sleeper sofa that combines style with functionality.",
+    "thumbnail": "https://example.com/images/sleeper-sofa-thumbnail.jpg",
+    "images": [
+      "https://example.com/images/sleeper-sofa1.jpg",
+      "https://example.com/images/sleeper-sofa2.jpg"
+    ],
+    "overview": "Stylish sleeper sofa perfect for overnight guests."
+  },
+  {
+    "_id": { "$oid": "609b8f5923b9b2f739024e59" },
+    "title": "Tufted Velvet Sofa",
+    "quantity": 3,
+    "price": 1299.99,
+    "discountPrice": 1149.99,
+    "stock": 10,
+    "brand": "GlamourHome",
+    "category": "sofa",
+    "productCode": "TVS9009",
+    "description": "A luxurious tufted velvet sofa that adds a touch of glamour to any room.",
+    "thumbnail": "https://imgs.search.brave.com/boKJAV0jEyh92L71VsOsXCqZVGpsLRIVaTCxIiIGsF4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/NTA1ODExOTAtOWMx/YzQ4ZDIxZDZjP3E9/ODAmdz0xMDAwJmF1/dG89Zm9ybWF0JmZp/dD1jcm9wJml4bGli/PXJiLTQuMC4zJml4/aWQ9TTN3eE1qQTNm/REI4TUh4elpXRnlZ/Mmg4TVRCOGZITnZa/bUY4Wlc1OE1IeDhN/SHg4ZkRBPQ",
+    "images": [
+      "https://example.com/images/tufted-velvet-sofa1.jpg",
+      "https://example.com/images/tufted-velvet-sofa2.jpg",
+      "https://example.com/images/tufted-velvet-sofa3.jpg"
+    ],
+    "overview": "Glamorous tufted velvet sofa with a stylish design."
+  },
+  {
+    "_id": { "$oid": "609b8f7023b9b2f739024e5a" },
+    "title": "Loveseat Sofa",
+    "quantity": 9,
+    "price": 599.99,
+    "discountPrice": 549.99,
+    "stock": 10,
+    "brand": "CozyNest",
+    "category": "sofa",
+    "productCode": "LSS1010",
+    "description": "A compact loveseat sofa that offers comfort and style for small spaces.",
+    "thumbnail": "https://imgs.search.brave.com/uNqN2x5by7w6-hJ_ot8dMPksXGzQSMAMGbUUBTT0pi4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE1/NTUwNDE0NjktYTU4/NmM2MWVhOWJjP3E9/ODAmdz0xMDAwJmF1/dG89Zm9ybWF0JmZp/dD1jcm9wJml4bGli/PXJiLTQuMC4zJml4/aWQ9TTN3eE1qQTNm/REI4TUh4elpXRnlZ/Mmg4TW54OGMyOW1Z/WHhsYm53d2ZId3dm/SHg4TUE9PQ",
+    "images": [
+      "https://example.com/images/loveseat-sofa1.jpg",
+      "https://example.com/images/loveseat-sofa2.jpg"
+    ],
+    "overview": "Compact loveseat sofa perfect for small living rooms."
   }
 ]

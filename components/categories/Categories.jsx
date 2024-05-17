@@ -10,8 +10,8 @@ export default async function Categories() {
         shop by category
       </h2>
       <div className="grid grid-cols-3 gap-3">
-        {categories?.map((category) => (
-          <CategoryCard key={category?.category} category={category} />
+        {categories?.map((category, i) => (
+          <CategoryCard key={i} category={category} />
         ))}
       </div>
     </div>

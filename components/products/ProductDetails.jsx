@@ -1,7 +1,10 @@
+import { auth } from '@/auth'
 import Image from 'next/image'
 import Link from 'next/link'
+import ShareProduct from './ShareProduct'
 
-export default function ProductDetails() {
+export default async function ProductDetails({product}) {
+  const session = await auth()
   return (
     <>
       <div className="container py-4 flex items-center gap-3">
@@ -17,8 +20,8 @@ export default function ProductDetails() {
       <div className="container grid grid-cols-2 gap-6">
         <div>
           <Image
-            src="/images/products/product1.jpg"
-            alt="product"
+            src={product?.thumbnail}
+            alt={product?.title}
             className="w-full"
             width={500}
             height={500}
@@ -64,7 +67,7 @@ export default function ProductDetails() {
 
         <div>
           <h2 className="text-3xl font-medium uppercase mb-2">
-            Italian L Shape Sofa
+            {product?.title}
           </h2>
           <div className="flex items-center mb-4">
             <div className="flex gap-1 text-sm text-yellow-400">
@@ -93,28 +96,27 @@ export default function ProductDetails() {
             </p>
             <p className="space-x-2">
               <span className="text-gray-800 font-semibold">Brand: </span>
-              <span className="text-gray-600">Apex</span>
+              <span className="text-gray-600">{product?.brand}</span>
             </p>
             <p className="space-x-2">
               <span className="text-gray-800 font-semibold">Category: </span>
-              <span className="text-gray-600">Sofa</span>
+              <span className="text-gray-600">{product?.category}</span>
             </p>
             <p className="space-x-2">
               <span className="text-gray-800 font-semibold">SKU: </span>
-              <span className="text-gray-600">BE45VGRT</span>
+              <span className="text-gray-600">{product?.productCode}</span>
             </p>
           </div>
           <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
-            <p className="text-xl text-primary font-semibold">$45.00</p>
-            <p className="text-base text-gray-400 line-through">$55.00</p>
+            <p className="text-xl text-primary font-semibold">
+              ${product?.discountPrice}
+            </p>
+            <p className="text-base text-gray-400 line-through">
+              ${product?.price}
+            </p>
           </div>
 
-          <p className="mt-4 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius
-            eum reprehenderit dolore vel mollitia optio consequatur hic
-            asperiores inventore suscipit, velit consequuntur, voluptate
-            doloremque iure necessitatibus adipisci magnam porro.
-          </p>
+          <p className="mt-4 text-gray-600">{product?.description}</p>
 
           <div className="mt-4">
             <h3 className="text-sm text-gray-800 uppercase mb-1">Quantity</h3>
@@ -131,17 +133,18 @@ export default function ProductDetails() {
             </div>
           </div>
 
-          <div className="mt-6 flex gap-3 border-b border-gray-200 pb-5 pt-5">
+          <div className="mt-6 flex items-center gap-3 border-b border-gray-200 pb-5 pt-5">
             <Link
-              href="#"
+              href={session?.user ? '#' : '/login'}
               className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition">
               <i className="fa-solid fa-bag-shopping"></i> Add to cart
             </Link>
             <Link
-              href="#"
+              href={session?.user ? '#' : '/login'}
               className="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary transition">
               <i className="fa-solid fa-heart"></i> Wishlist
             </Link>
+            <ShareProduct />
           </div>
 
           <div className="flex gap-3 mt-4">

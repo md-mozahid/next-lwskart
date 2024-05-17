@@ -1,0 +1,82 @@
+[
+  {
+    "_id": { "$oid": "60a0eaf023b9b2f739024e79" },
+    "title": "Men's Casual T-Shirt",
+    "quantity": 50,
+    "price": 19.99,
+    "discountPrice": 14.99,
+    "stock": 10,
+    "brand": "StyleHub",
+    "category": "cloth",
+    "size": ["S", "M", "L", "XL"],
+    "color": ["Red", "Blue", "Black"],
+    "productCode": "CT1001",
+    "description": "A comfortable and stylish casual t-shirt for men.",
+    "thumbNail": "https://imgs.search.brave.com/KB12XeZMzbCPq5yWpy9XASV0XEHwXVjqmsICMdaphFA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFlbFJ0VWlubEwu/anBn",
+    "images": [
+      "https://example.com/images/mens-casual-tshirt1.jpg",
+      "https://example.com/images/mens-casual-tshirt2.jpg"
+    ],
+    "overview": "High-quality cotton t-shirt suitable for everyday wear."
+  },
+  {
+    "_id": { "$oid": "60a0eb0723b9b2f739024e7a" },
+    "title": "Women's Summer Dress",
+    "quantity": 30,
+    "price": 49.99,
+    "discountPrice": 39.99,
+    "stock": 10,
+    "brand": "Fashionista",
+    "category": "cloth",
+    "size": ["S", "M", "L"],
+    "color": ["Yellow", "Green", "White"],
+    "productCode": "SD2002",
+    "description": "A beautiful summer dress perfect for sunny days.",
+    "thumbNail": "https://imgs.search.brave.com/NyCpZ3boaOKxyws5cQIjGFLmM6zR3V1H_bEYna7HN-A/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/ODc0MTE0L3Bob3Rv/L2dyZWVuLXQtc2hp/cnQuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPW5xSlVHd09Z/amNRZUR6eGZGeUVG/eFE2ZzczMkJTc1ZE/T0lKdWl0eXFtNkE9",
+    "images": [
+      "https://example.com/images/womens-summer-dress1.jpg",
+      "https://example.com/images/womens-summer-dress2.jpg"
+    ],
+    "overview": "Lightweight and flowy dress with vibrant colors."
+  },
+  {
+    "_id": { "$oid": "60a0eb1e23b9b2f739024e7b" },
+    "title": "Men's Formal Shirt",
+    "quantity": 40,
+    "price": 39.99,
+    "discountPrice": 29.99,
+    "stock": "in stock",
+    "brand": "ExecutiveWear",
+    "category": "cloth",
+    "size": ["M", "L", "XL"],
+    "color": ["White", "Blue", "Gray"],
+    "productCode": "FS3003",
+    "description": "A sleek formal shirt for men, ideal for office wear.",
+    "thumbNail": "https://imgs.search.brave.com/5JCSv14NDqzVvh29BvvcmC_MrjHNuagfTAPy4sBq0UA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLXN0/YXRpYy5zbWFydHBo/b3RvLmNvbS9zdHJ1/Y3R1cmVkL3JlcG9z/aXRvcnlpbWFnZS9w/cm9kdWN0Y2F0ZWdv/cnkvZnVuX2lkZWFz/L3RzaGlydG1lbi90/b3BpbWFnZXMvMDAy/MC9pbWFnZS90c2hp/cnRzLWNhcnJvdXNl/bDIuanBn",
+    "images": [
+      "https://example.com/images/mens-formal-shirt1.jpg",
+      "https://example.com/images/mens-formal-shirt2.jpg"
+    ],
+    "overview": "Premium formal shirt with a perfect fit and finish."
+  },
+  {
+    "_id": { "$oid": "60a0eb3523b9b2f739024e7c" },
+    "title": "Women's Denim Jacket",
+    "quantity": 25,
+    "price": 69.99,
+    "discountPrice": 59.99,
+    "stock": 10,
+    "brand": "UrbanStyle",
+    "category": "cloth",
+    "size": ["S", "M", "L"],
+    "color": ["Blue", "Black"],
+    "productCode": "DJ4004",
+    "description": "A trendy denim jacket for women.",
+    "thumbNail": "https://imgs.search.brave.com/8O1AMIgEd7TY8GV5b3fREWeT7DmlTOijExigbWjDxW0/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFjTnF3ejVscEwu/anBn",
+    "images": [
+      "https://example.com/images/womens-denim-jacket1.jpg",
+      "https://example.com/images/womens-denim-jacket2.jpg"
+    ],
+    "overview": "Stylish denim jacket with a modern fit."
+  }
+]

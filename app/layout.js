@@ -29,6 +29,7 @@ export default async function RootLayout({ children }) {
         </header>
         <Navbar />
         {children}
+        <div id="modal-root-content" />
         <Footer />
         <Copyright />
       </body>
