@@ -1,13 +1,15 @@
 import { auth } from '@/auth'
+import { getBlurImage } from '@/utils/getBlurImage'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { FaStar } from 'react-icons/fa6'
-import ShareProduct from './ShareProduct'
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 import AddToCart from './AddToCart'
 import AddToWishList from './AddToWishList'
+import ShareProduct from './ShareProduct'
 
 export default async function ProductDetails({ product }) {
+  const { base64 } = await getBlurImage(product?.thumbnail)
   const session = await auth()
   return (
     <>
@@ -27,8 +29,10 @@ export default async function ProductDetails({ product }) {
             src={product?.thumbnail}
             alt={product?.title}
             className="w-full"
-            width={500}
-            height={500}
+            width={900}
+            height={900}
+            placeholder="blur"
+            blurDataURL={base64}
           />
           <div className="grid grid-cols-5 gap-4 mt-4">
             <Image

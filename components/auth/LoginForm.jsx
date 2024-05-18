@@ -4,6 +4,7 @@ import { login } from '@/app/actions'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { useFormStatus } from 'react-dom'
 import { toast } from 'react-toastify'
 
 export default function LoginForm() {
@@ -26,13 +27,28 @@ export default function LoginForm() {
       setError(err)
     }
   }
+
+  // use form status hook
+  function Button() {
+    const { pending } = useFormStatus()
+    return (
+      <button
+        disabled={pending}
+        type="submit"
+        className={`${
+          pending ? 'bg-slate-500' : 'bg-primary'
+        } btn-primary btn-fw`}>
+        {pending ? 'Logging...' : 'Login'}
+      </button>
+    )
+  }
   return (
     <>
       {error && <div className="text-xl text-red-500 text-center">{error}</div>}
       <form method="post" onSubmit={handleLogin}>
         <div className="space-y-2">
           <div>
-            <label for="email" className="text-gray-600 mb-2 block">
+            <label htmlFor="email" className="text-gray-600 mb-2 block">
               Email address
             </label>
             <input
@@ -44,7 +60,7 @@ export default function LoginForm() {
             />
           </div>
           <div>
-            <label for="password" className="text-gray-600 mb-2 block">
+            <label htmlFor="password" className="text-gray-600 mb-2 block">
               Password
             </label>
             <input
@@ -64,7 +80,7 @@ export default function LoginForm() {
               id="remember"
               className="text-primary focus:ring-0 rounded-sm cursor-pointer"
             />
-            <label for="remember" className="text-gray-600 ml-3 cursor-pointer">
+            <label htmlFor="remember" className="text-gray-600 ml-3 cursor-pointer">
               Remember me
             </label>
           </div>
@@ -73,11 +89,7 @@ export default function LoginForm() {
           </Link>
         </div>
         <div className="mt-4">
-          <button
-            type="submit"
-            className="block w-full py-2 text-center text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">
-            Login
-          </button>
+          <Button />
         </div>
       </form>
     </>

@@ -1,4 +1,5 @@
 import { auth } from '@/auth'
+import { getBlurImage } from '@/utils/getBlurImage'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaMagnifyingGlass, FaStar } from 'react-icons/fa6'
@@ -6,6 +7,7 @@ import AddToCart from './AddToCart'
 import AddToWishList from './AddToWishList'
 
 export default async function ProductCard({ product }) {
+  // const { base64 } = await getBlurImage(product?.thumbnail)
   const session = await auth()
 
   return (
@@ -15,8 +17,10 @@ export default async function ProductCard({ product }) {
           src={product?.thumbnail}
           alt={product?.title}
           className="w-full h-64"
-          width={500}
-          height={500}
+          width={900}
+          height={900}
+          // placeholder="blur"
+          // blurDataURL={base64}
         />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
           <Link
