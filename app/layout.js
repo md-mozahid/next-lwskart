@@ -9,6 +9,7 @@ import CartProvider from '@/provider/CartProvider'
 import connectMongo from '@/services/connectMongo'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import ToastProvider from '@/provider/ToastProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,20 +25,22 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <CartProvider>
-          <header className="py-4 shadow-sm bg-white">
-            <div className="container flex items-center justify-between">
-              <Logo />
-              <Search />
-              <CartSection session={session} />
-            </div>
-          </header>
-          <Navbar />
-          {children}
-          <div id="modal-root-content" />
-          <Footer />
-          <Copyright />
+          <ToastProvider>
+            <header className="py-4 shadow-sm bg-white">
+              <div className="container flex items-center justify-between">
+                <Logo />
+                <Search />
+                <CartSection session={session} />
+              </div>
+            </header>
+            <Navbar />
+            {children}
+            <div id="modal-root-content" />
+            <Footer />
+            <Copyright />
+          </ToastProvider>
         </CartProvider>
       </body>
     </html>
-  )
+  );
 }

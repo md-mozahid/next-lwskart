@@ -4,6 +4,7 @@ import { login } from '@/app/actions'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 export default function LoginForm() {
   const [error, setError] = useState('')
@@ -14,11 +15,12 @@ export default function LoginForm() {
     try {
       const formData = new FormData(e.currentTarget)
       const response = await login(formData)
-      console.log(response)
+      // console.log(response)
       if (!!response.error) {
         setError(response.error)
       } else {
         router.push('/')
+        toast.success('Login successful.')
       }
     } catch (err) {
       setError(err)

@@ -1,6 +1,7 @@
 import { useCart } from '@/hooks/useCart'
 import Image from 'next/image'
 import { FaRegTrashCan } from 'react-icons/fa6'
+import { toast } from 'react-toastify'
 
 export default function CartItem({ item }) {
   const { addItemToCart, removeItemFromCart } = useCart()
@@ -66,7 +67,10 @@ export default function CartItem({ item }) {
           </span>
         </div>
         <div className="text-gray-600 cursor-pointer mr-5 hover:text-primary">
-          <i className="text-xl" onClick={() => removeItemFromCart(item?.id)}>
+          <i className="text-xl" onClick={() => {
+            removeItemFromCart(item?.id)
+            toast.success("Product remove from cart.");
+            }}>
             <FaRegTrashCan />
           </i>
         </div>

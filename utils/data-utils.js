@@ -22,13 +22,3 @@ export const isDateInBetween = (date, from, to) => {
     new Date(date).getTime() <= new Date(to).getTime()
   );
 };
-
-// find category name in array
-export const getUniqueCategory = (productArray) => {
-  const uniqueCategories = new Set()
-  productArray.forEach((product) => {
-    uniqueCategories.add(product.category)
-  })
-  const uniqueCategoryName = [...uniqueCategories]
-  return uniqueCategoryName
-}

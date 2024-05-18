@@ -3,6 +3,7 @@
 import { useCart } from '@/hooks/useCart'
 import { useRouter } from 'next/navigation'
 import { FaHeart } from 'react-icons/fa6'
+import { toast } from 'react-toastify'
 
 export default function AddToWishList({ session, product, card }) {
     const router = useRouter()
@@ -16,6 +17,7 @@ export default function AddToWishList({ session, product, card }) {
           thumbnail: product?.thumbnail,
           stock: product?.stock,
         })
+        toast.success("Product added to wishlist.");
       } else {
         router.push('/login')
       }

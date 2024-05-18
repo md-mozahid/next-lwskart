@@ -17,9 +17,11 @@
     "next": "14.2.3",
     "next-auth": "^5.0.0-beta.18",
     "next-share": "^0.27.0",
+    "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
