@@ -1,4 +1,4 @@
-import Modal from '@/components/Modal'
+import Modal from '@/components/modal/Modal'
 import ProductDetails from '@/components/products/ProductDetails'
 import { getSingleProduct } from '@/database/queries'
 import { notFound } from 'next/navigation'

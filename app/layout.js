@@ -1,3 +1,4 @@
+import { auth } from '@/auth'
 import CartSection from '@/components/cart/CartSection'
 import Copyright from '@/components/shared/Copyright'
 import Footer from '@/components/shared/Footer'
@@ -18,6 +19,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   await connectMongo()
+  const session =await auth()
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -26,7 +28,7 @@ export default async function RootLayout({ children }) {
             <div className="container flex items-center justify-between">
               <Logo />
               <Search />
-              <CartSection />
+              <CartSection session={session} />
             </div>
           </header>
           <Navbar />

@@ -1,9 +1,13 @@
 import { auth } from '@/auth'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaStar } from 'react-icons/fa6'
 import ShareProduct from './ShareProduct'
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
+import AddToCart from './AddToCart'
+import AddToWishList from './AddToWishList'
 
-export default async function ProductDetails({product}) {
+export default async function ProductDetails({ product }) {
   const session = await auth()
   return (
     <>
@@ -72,19 +76,9 @@ export default async function ProductDetails({product}) {
           <div className="flex items-center mb-4">
             <div className="flex gap-1 text-sm text-yellow-400">
               <span>
-                <i className="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i className="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i className="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i className="fa-solid fa-star"></i>
-              </span>
-              <span>
-                <i className="fa-solid fa-star"></i>
+                <i>
+                  <FaStar />
+                </i>
               </span>
             </div>
             <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
@@ -134,16 +128,8 @@ export default async function ProductDetails({product}) {
           </div>
 
           <div className="mt-6 flex items-center gap-3 border-b border-gray-200 pb-5 pt-5">
-            <Link
-              href={session?.user ? '#' : '/login'}
-              className="bg-primary border border-primary text-white px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition">
-              <i className="fa-solid fa-bag-shopping"></i> Add to cart
-            </Link>
-            <Link
-              href={session?.user ? '#' : '/login'}
-              className="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary transition">
-              <i className="fa-solid fa-heart"></i> Wishlist
-            </Link>
+            <AddToCart session={session} product={product} />
+            <AddToWishList session={session} product={product} />
             <ShareProduct />
           </div>
 
@@ -151,17 +137,23 @@ export default async function ProductDetails({product}) {
             <Link
               href="#"
               className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
-              <i className="fa-brands fa-facebook-f"></i>
+              <i className="">
+                <FaFacebookF />
+              </i>
             </Link>
             <Link
               href="#"
               className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
-              <i className="fa-brands fa-twitter"></i>
+              <i className="">
+                <FaTwitter />
+              </i>
             </Link>
             <Link
               href="#"
               className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
-              <i className="fa-brands fa-instagram"></i>
+              <i className="">
+                <FaInstagram />
+              </i>
             </Link>
           </div>
         </div>

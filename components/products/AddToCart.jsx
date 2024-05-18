@@ -2,8 +2,9 @@
 
 import { useCart } from '@/hooks/useCart'
 import { useRouter } from 'next/navigation'
+import { FaBagShopping } from 'react-icons/fa6'
 
-export default function AddToCart({ session, product }) {
+export default function AddToCart({ session, product, className }) {
   const router = useRouter()
   const { addItemToCart } = useCart()
 
@@ -22,9 +23,10 @@ export default function AddToCart({ session, product }) {
     }
   }
   return (
-    <button
-      onClick={handleClick}
-      className="block w-full py-1 text-center text-white bg-primary border border-primary rounded-b hover:bg-transparent hover:text-primary transition">
+    <button onClick={handleClick} className={`btn-primary ${className}`}>
+      <i className="">
+        <FaBagShopping />
+      </i>
       Add to cart
     </button>
   )

@@ -1,7 +1,8 @@
+import AddToCart from '@/components/products/AddToCart'
 import Image from 'next/image'
-import Link from 'next/link'
+import WishlistItemRemove from './WishlistItemRemove'
 
-export default function WishlistItems({ wishlist }) {
+export default function WishlistItem({ wishlist, session }) {
   return (
     <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
       <div className="w-28">
@@ -24,15 +25,8 @@ export default function WishlistItems({ wishlist }) {
       <div className="text-primary text-lg font-semibold">
         ${wishlist?.price}
       </div>
-      <Link
-        href="#"
-        className="px-6 py-2 text-center text-sm text-white bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium">
-        add to cart
-      </Link>
-
-      <div className="text-gray-600 cursor-pointer hover:text-primary">
-        <i className="fa-solid fa-trash"></i>
-      </div>
+      <AddToCart session={session} product={wishlist} className={'text-sm'} />
+      <WishlistItemRemove wishlist={wishlist} />
     </div>
   )
 }

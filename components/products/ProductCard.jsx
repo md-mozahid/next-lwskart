@@ -1,9 +1,9 @@
 import { auth } from '@/auth'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaMagnifyingGlass, FaStar } from 'react-icons/fa6'
 import AddToCart from './AddToCart'
-import WishListItemQty from '../cart/WishListItemQty'
-import { useCart } from '@/hooks/useCart'
+import AddToWishList from './AddToWishList'
 
 export default async function ProductCard({ product }) {
   const session = await auth()
@@ -14,24 +14,24 @@ export default async function ProductCard({ product }) {
         <Image
           src={product?.thumbnail}
           alt={product?.title}
-          className="w-full"
+          className="w-full h-64"
           width={500}
           height={500}
         />
-        <div
-          className="absolute inset-0 bg-black bg-opacity-40 flex items-center 
-                    justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
           <Link
             href={`/details/${product?.id}`}
             className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
             title="view product">
-            <i className="fa-solid fa-magnifying-glass"></i>
+            <i>
+              <FaMagnifyingGlass />
+            </i>
           </Link>
-          <WishListItemQty product={product} session={session} />
+          <AddToWishList session={session} product={product} card={true} />
         </div>
       </div>
       <div className="pt-4 pb-3 px-4">
-        <Link href="#">
+        <Link href={`/details/${product?.id}`}>
           <h4 className="uppercase font-medium text-xl mb-2 text-gray-800 hover:text-primary transition">
             {product?.title}
           </h4>
@@ -47,25 +47,15 @@ export default async function ProductCard({ product }) {
         <div className="flex items-center">
           <div className="flex gap-1 text-sm text-yellow-400">
             <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
-            </span>
-            <span>
-              <i className="fa-solid fa-star"></i>
+              <i className="fa-solid fa-star">
+                <FaStar />
+              </i>
             </span>
           </div>
-          <div className="text-xs text-gray-500 ml-3">(150)</div>
+          <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
         </div>
       </div>
-      <AddToCart session={session} product={product} />
+      <AddToCart session={session} product={product} className={'w-full'} />
     </div>
   )
 }

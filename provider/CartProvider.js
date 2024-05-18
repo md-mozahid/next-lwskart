@@ -100,6 +100,18 @@ export default function CartProvider({ children }) {
     setWishlistToState()
   }
 
+  // remove wishlist item
+  const removeItemFromWishlist = (id) => {
+    const newWishlistItem = wishlist?.wishlistItems?.filter(
+      (item) => item?.id !== id
+    )
+    localStorage.setItem(
+      'wishlist',
+      JSON.stringify({ wishlistItems: newWishlistItem })
+    )
+    setWishlistToState()
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -108,6 +120,7 @@ export default function CartProvider({ children }) {
         addItemToCart,
         removeItemFromCart,
         addItemToWishlist,
+        removeItemFromWishlist,
       }}>
       {children}
     </CartContext.Provider>

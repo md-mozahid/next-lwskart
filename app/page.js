@@ -1,5 +1,5 @@
-import Banner from '@/components/Banner'
-import Features from '@/components/Features'
+import Banner from '@/components/featured/Banner'
+import Features from '@/components/featured/Features'
 import Categories from '@/components/categories/Categories'
 import NewArrival from '@/components/newArrival/NewArrival'
 import ProductAds from '@/components/newArrival/ProductAds'
