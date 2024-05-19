@@ -1,20 +1,22 @@
-import { auth } from '@/auth'
-import { getBlurImage } from '@/utils/getBlurImage'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaMagnifyingGlass, FaStar } from 'react-icons/fa6'
-import AddToCart from './AddToCart'
-import AddToWishList from './AddToWishList'
+import { auth } from "@/auth";
+import { getBlurImage } from "@/utils/getBlurImage";
+import Image from "next/image";
+import Link from "next/link";
+import { FaMagnifyingGlass, FaStar } from "react-icons/fa6";
+import AddToCart from "./AddToCart";
+import AddToWishList from "./AddToWishList";
+import { getRatings } from "@/utils/getRatings";
 
 export default async function ProductCard({ product }) {
   // const { base64 } = await getBlurImage(product?.thumbnail)
-  const session = await auth()
+  const session = await auth();
+  const ratings = getRatings(4);
 
   return (
     <div className="bg-white shadow rounded overflow-hidden group">
       <div className="relative">
         <Image
-          src={product?.thumbnail}
+          src={product?.images[0]}
           alt={product?.title}
           className="w-full h-64"
           width={900}
@@ -26,7 +28,8 @@ export default async function ProductCard({ product }) {
           <Link
             href={`/details/${product?.id}`}
             className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-            title="view product">
+            title="view product"
+          >
             <i>
               <FaMagnifyingGlass />
             </i>
@@ -49,17 +52,24 @@ export default async function ProductCard({ product }) {
           </p>
         </div>
         <div className="flex items-center">
-          <div className="flex gap-1 text-sm text-yellow-400">
-            <span>
-              <i className="fa-solid fa-star">
-                <FaStar />
-              </i>
+          <div className="flex justify-center items-center gap-1 text-sm text-orange-400">
+            {ratings.map((r, i) => (
+              <span key={i}>
+                <i>
+                  <FaStar />
+                </i>
+              </span>
+            ))}
+            <span className="text-xs lg:text-sm">
+              ({`${product?.ratings} Star`})
             </span>
           </div>
-          <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
+          <div className="text-xs text-gray-500 ml-3">
+            ({product?.reviewsNumber} Reviews)
+          </div>
         </div>
       </div>
-      <AddToCart session={session} product={product} className={'w-full'} />
+      <AddToCart session={session} product={product} className={"w-full"} />
     </div>
-  )
+  );
 }

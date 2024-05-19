@@ -1,16 +1,20 @@
-import { auth } from '@/auth'
-import { getBlurImage } from '@/utils/getBlurImage'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
-import { FaStar } from 'react-icons/fa6'
-import AddToCart from './AddToCart'
-import AddToWishList from './AddToWishList'
-import ShareProduct from './ShareProduct'
+import { auth } from "@/auth";
+import { getBlurImage } from "@/utils/getBlurImage";
+import Image from "next/image";
+import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaStar } from "react-icons/fa6";
+import AddToCart from "./AddToCart";
+import AddToWishList from "./AddToWishList";
+import ShareProduct from "./ShareProduct";
+import { getRatings } from "@/utils/getRatings";
+import { getProductStock } from "@/utils/getProductStock";
 
 export default async function ProductDetails({ product }) {
-  const { base64 } = await getBlurImage(product?.thumbnail)
-  const session = await auth()
+  // const { base64 } = await getBlurImage(product?.thumbnail)
+  const session = await auth();
+  const ratings = getRatings(product?.ratings);
+  const stock = getProductStock(product?.sku, product?.soldCounts);
   return (
     <>
       <div className="container py-4 flex items-center gap-3">
@@ -26,47 +30,36 @@ export default async function ProductDetails({ product }) {
       <div className="container grid grid-cols-2 gap-6">
         <div>
           <Image
-            src={product?.thumbnail}
+            src={product?.images[0]}
             alt={product?.title}
             className="w-full"
             width={900}
             height={900}
-            placeholder="blur"
-            blurDataURL={base64}
+            // placeholder="blur"
+            // blurDataURL={base64}
           />
+
           <div className="grid grid-cols-5 gap-4 mt-4">
             <Image
-              src="/images/products/product2.jpg"
+              src={product?.images[0]}
               alt="product2"
               className="w-full cursor-pointer border border-primary"
               width={500}
               height={500}
             />
+
             <Image
-              src="/images/products/product3.jpg"
+              src={product?.images[1]}
               alt="product2"
-              className="w-full cursor-pointer border"
+              className="w-full cursor-pointer border border-primary"
               width={500}
               height={500}
             />
+
             <Image
-              src="/images/products/product4.jpg"
+              src={product?.images[2]}
               alt="product2"
-              className="w-full cursor-pointer border"
-              width={500}
-              height={500}
-            />
-            <Image
-              src="/images/products/product5.jpg"
-              alt="product2"
-              className="w-full cursor-pointer border"
-              width={500}
-              height={500}
-            />
-            <Image
-              src="/images/products/product6.jpg"
-              alt="product2"
-              className="w-full cursor-pointer border"
+              className="w-full cursor-pointer border border-primary"
               width={500}
               height={500}
             />
@@ -78,31 +71,44 @@ export default async function ProductDetails({ product }) {
             {product?.title}
           </h2>
           <div className="flex items-center mb-4">
-            <div className="flex gap-1 text-sm text-yellow-400">
-              <span>
-                <i>
-                  <FaStar />
-                </i>
+            <div className="flex items-center gap-1 text-sm text-orange-400">
+              {ratings.map((r, i) => (
+                <span key={i}>
+                  <i>
+                    <FaStar />
+                  </i>
+                </span>
+              ))}
+              <span className="text-xs lg:text-sm">
+                ({`${product?.ratings} Star`})
               </span>
             </div>
-            <div className="text-xs text-gray-500 ml-3">(150 Reviews)</div>
+            <div className="text-xs text-gray-500 ml-3">
+              ({product?.reviewsNumber} Reviews)
+            </div>
           </div>
           <div className="space-y-2">
             <p className="text-gray-800 font-semibold space-x-2">
               <span>Availability: </span>
-              <span className="text-green-600">In Stock</span>
+              {stock ? (
+                <span className="text-green-600">In Stock</span>
+              ) : (
+                <span className="text-green-600">Out of Stock</span>
+              )}
             </p>
             <p className="space-x-2">
               <span className="text-gray-800 font-semibold">Brand: </span>
               <span className="text-gray-600">{product?.brand}</span>
             </p>
             <p className="space-x-2">
-              <span className="text-gray-800 font-semibold">Category: </span>
-              <span className="text-gray-600">{product?.category}</span>
+              <span className="text-gray-800 font-semibold ">Category: </span>
+              <span className="text-gray-600 uppercase">
+                {product?.category}
+              </span>
             </p>
             <p className="space-x-2">
               <span className="text-gray-800 font-semibold">SKU: </span>
-              <span className="text-gray-600">{product?.productCode}</span>
+              <span className="text-gray-600">{product?.sku}</span>
             </p>
           </div>
           <div className="flex items-baseline mb-1 space-x-2 font-roboto mt-4">
@@ -140,21 +146,24 @@ export default async function ProductDetails({ product }) {
           <div className="flex gap-3 mt-4">
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
+            >
               <i className="">
                 <FaFacebookF />
               </i>
             </Link>
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
+            >
               <i className="">
                 <FaTwitter />
               </i>
             </Link>
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
+            >
               <i className="">
                 <FaInstagram />
               </i>
@@ -163,5 +172,5 @@ export default async function ProductDetails({ product }) {
         </div>
       </div>
     </>
-  )
+  );
 }

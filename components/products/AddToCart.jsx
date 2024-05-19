@@ -15,7 +15,7 @@ export default function AddToCart({ session, product, className }) {
         id: product?.id,
         title: product?.title,
         price: product?.price,
-        thumbnail: product?.thumbnail,
+        thumbnail: product?.images[0],
         stock: product?.stock,
         quantity: product?.quantity,
       });

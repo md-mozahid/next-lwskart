@@ -6,7 +6,7 @@ import CartProvider from '@/provider/CartProvider'
 import ToastProvider from '@/provider/ToastProvider'
 import connectMongo from "@/backend/services/connectMongo";
 import { Inter } from 'next/font/google'
-import './globals.css'
+import '../globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 

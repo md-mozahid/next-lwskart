@@ -6,6 +6,7 @@ import ProductAds from '@/components/newArrival/ProductAds'
 import TrendingProducts from '@/components/newArrival/TrendingProducts'
 
 export default function Home() {
+
   return (
     <>
       <Banner />
