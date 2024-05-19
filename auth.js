@@ -3,8 +3,8 @@ import bcrypt from 'bcryptjs'
 import NextAuth from 'next-auth'
 import CredentialProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
-import clientPromise from './database/mongoClientPromise'
-import { userModel } from './models/user-model'
+import clientPromise from "./backend/database/mongoClientPromise";
+import { userModel } from "./backend/models/user-model";
 
 export const {
   handlers: { GET, POST },

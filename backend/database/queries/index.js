@@ -1,6 +1,6 @@
-import { categoryModel } from '@/models/category-model'
-import { productModel } from '@/models/product-model'
-import connectMongo from '@/services/connectMongo'
+import { categoryModel } from "@/backend/models/category-model";
+import { productModel } from "@/backend/models/product-model";
+import connectMongo from "@/backend/services/connectMongo";
 import { replaceMongoIdInArray, replaceMongoIdInObject } from '@/utils/data-utils'
 
 export async function getAllProducts() {

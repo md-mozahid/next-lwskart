@@ -1,5 +1,5 @@
-import { userModel } from '@/models/user-model'
-import connectMongo from '@/services/connectMongo'
+import { userModel } from "@/backend/models/user-model";
+import connectMongo from "@/backend/services/connectMongo";
 import bcrypt from 'bcryptjs'
 import { NextResponse } from 'next/server'
 

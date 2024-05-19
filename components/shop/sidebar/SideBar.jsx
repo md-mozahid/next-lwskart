@@ -1,4 +1,4 @@
-import { getAllProducts } from '@/database/queries'
+import { getAllProducts } from "@/backend/database/queries";
 import { findUniqueCategoryName } from '@/utils/getCategories'
 import FilterCategory from '../FilterCategory'
 

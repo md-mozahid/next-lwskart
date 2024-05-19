@@ -1,4 +1,4 @@
-import { getAllCategories } from '@/database/queries'
+import { getAllCategories } from "@/backend/database/queries";
 import CategoryCard from './CategoryCard'
 
 export default async function Categories() {

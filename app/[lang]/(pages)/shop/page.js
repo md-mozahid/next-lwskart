@@ -2,7 +2,7 @@ import ProductCard from "@/components/products/ProductCard";
 import BreadCrumb from "@/components/shared/BreadCrumbs";
 import FilterCategory from "@/components/shop/FilterCategory";
 import SideBar from "@/components/shop/sidebar/SideBar";
-import { getAllProducts } from "@/database/queries";
+import { getAllProducts } from "@/backend/database/queries";
 
 export default async function ShopPage() {
   const allProducts = await getAllProducts()

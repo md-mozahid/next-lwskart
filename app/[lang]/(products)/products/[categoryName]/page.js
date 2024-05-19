@@ -1,6 +1,6 @@
 import ProductCard from '@/components/products/ProductCard'
 import BreadCrumb from '@/components/shared/BreadCrumbs'
-import { getProductsByCategory } from '@/database/queries'
+import { getProductsByCategory } from "@/backend/database/queries";
 
 export default async function ProductsByCategory({ params: { categoryName } }) {
   const decodeCategoryName = decodeURIComponent(categoryName).toLowerCase()

@@ -1,17 +1,17 @@
-import { getAllCategories } from '@/database/queries'
-import Image from 'next/image'
-import Link from 'next/link'
+import { getAllCategories } from "@/backend/database/queries";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function Dropdown() {
-  const categories = await getAllCategories()
+  const categories = await getAllCategories();
   return (
-    <div
-      className="absolute left-0 top-full md:w-[250px] bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible w-[600px] z-10">
+    <div className="absolute left-0 top-full md:w-[250px] bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible w-[600px] z-10">
       {categories?.map((cat) => (
         <Link
           key={cat?.title}
           href={`/products/${cat?.title}`}
-          className="flex items-center px-6 py-3 hover:bg-gray-100 transition uppercase">
+          className="flex items-center px-6 py-3 hover:bg-gray-100 transition uppercase"
+        >
           <Image
             src={cat?.thumbnail}
             alt={cat?.title}
@@ -23,5 +23,5 @@ export default async function Dropdown() {
         </Link>
       ))}
     </div>
-  )
+  );
 }

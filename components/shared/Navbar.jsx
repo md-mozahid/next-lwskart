@@ -1,6 +1,8 @@
-import Link from 'next/link'
-import SingIn from '../auth/SingIn'
-import Dropdown from './Dropdown'
+import Link from "next/link";
+import SingIn from "../auth/SingIn";
+import Dropdown from "./Dropdown";
+import LanguageSwitcher from "../lang/LanguageSwitcher";
+import Theme from "../theme/Theme";
 
 export default async function Navbar() {
   return (
@@ -20,29 +22,37 @@ export default async function Navbar() {
           <div className="flex items-center space-x-6 capitalize">
             <Link
               href="/"
-              className="text-gray-200 hover:text-white transition">
+              className="text-gray-200 hover:text-white transition"
+            >
               Home
             </Link>
             <Link
               href="/shop"
-              className="text-gray-200 hover:text-white transition">
+              className="text-gray-200 hover:text-white transition"
+            >
               Shop
             </Link>
             <Link
-              href="#"
-              className="text-gray-200 hover:text-white transition">
+              href="/about"
+              className="text-gray-200 hover:text-white transition"
+            >
               About us
             </Link>
 
             <Link
-              href="#"
-              className="text-gray-200 hover:text-white transition">
+              href="/contact"
+              className="text-gray-200 hover:text-white transition"
+            >
               Contact us
             </Link>
+            <LanguageSwitcher />
           </div>
-          <SingIn />
+          <div className="flex items-center justify-center gap-2">
+            <SingIn />
+            <Theme />
+          </div>
         </div>
       </div>
     </nav>
-  )
+  );
 }
