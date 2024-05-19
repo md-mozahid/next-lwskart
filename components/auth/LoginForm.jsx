@@ -45,7 +45,7 @@ export default function LoginForm() {
   return (
     <>
       {error && <div className="text-xl text-red-500 text-center">{error}</div>}
-      <form method="post" onSubmit={handleLogin}>
+      <form onSubmit={handleLogin}>
         <div className="space-y-2">
           <div>
             <label htmlFor="email" className="text-gray-600 mb-2 block">
@@ -80,7 +80,9 @@ export default function LoginForm() {
               id="remember"
               className="text-primary focus:ring-0 rounded-sm cursor-pointer"
             />
-            <label htmlFor="remember" className="text-gray-600 ml-3 cursor-pointer">
+            <label
+              htmlFor="remember"
+              className="text-gray-600 ml-3 cursor-pointer">
               Remember me
             </label>
           </div>

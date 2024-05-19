@@ -15,7 +15,7 @@ export default function OrderSummary() {
           </div>
           <p className="text-gray-600">x{item?.quantity}</p>
           <p className="text-gray-800 font-medium">
-            ${item?.price * item?.quantity?.toFixed(2)}
+            ${(item?.price * item?.quantity).toFixed(2)}
           </p>
         </div>
       ))}

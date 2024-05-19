@@ -3,11 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function Dropdown() {
-  const Categories = await getAllCategories()
+  const categories = await getAllCategories()
   return (
     <div
       className="absolute left-0 top-full md:w-[250px] bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible w-[600px] z-10">
-      {Categories?.map((cat) => (
+      {categories?.map((cat) => (
         <Link
           key={cat?.title}
           href={`/products/${cat?.title}`}

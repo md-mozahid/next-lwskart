@@ -1,4 +1,5 @@
 import ProductDetails from '@/components/products/ProductDetails'
+import BreadCrumbs from '@/components/shared/BreadCrumbs'
 import { getSingleProduct } from '@/database/queries'
 import { notFound } from 'next/navigation'
 
@@ -37,5 +38,10 @@ export default async function ProductDetailsPage({ params: { productId } }) {
   if (!product) {
     notFound()
   }
-  return <ProductDetails product={product} />
+  return (
+    <>
+      <BreadCrumbs />
+      <ProductDetails product={product} />
+    </>
+  )
 }

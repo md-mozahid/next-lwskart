@@ -60,16 +60,18 @@ export default function CartItem({ item }) {
         <div className="text-primary text-lg font-semibold flex flex-col">
           <span>
             <span className="text-slate-500">$</span>{' '}
-            {item?.price * item?.quantity?.toFixed(2)}
+            {(item?.price * item?.quantity).toFixed(2)}
           </span>
           <span className="text-sm text-slate-500">
             <span className="text-slate-500">$</span> {item?.price} / per item
           </span>
         </div>
         <div className="text-gray-600 cursor-pointer mr-5 hover:text-primary">
-          <i className="text-xl" onClick={() => {
-            removeItemFromCart(item?.id)
-            toast.success("Product remove from cart.");
+          <i
+            className="text-xl"
+            onClick={() => {
+              removeItemFromCart(item?.id)
+              toast.success('Product remove from cart.')
             }}>
             <FaRegTrashCan />
           </i>

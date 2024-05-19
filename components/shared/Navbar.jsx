@@ -2,7 +2,7 @@ import Link from 'next/link'
 import SingIn from '../auth/SingIn'
 import Dropdown from './Dropdown'
 
-export default function Navbar() {
+export default async function Navbar() {
   return (
     <nav className="bg-gray-800">
       <div className="container flex">
@@ -10,9 +10,7 @@ export default function Navbar() {
           <span className="text-white">
             <i className="fa-solid fa-bars"></i>
           </span>
-          <span className="capitalize ml-2 text-white">
-            All Categories
-          </span>
+          <span className="capitalize ml-2 text-white">All Categories</span>
 
           {/* <!-- dropdown --> */}
           <Dropdown />
@@ -35,6 +33,7 @@ export default function Navbar() {
               className="text-gray-200 hover:text-white transition">
               About us
             </Link>
+
             <Link
               href="#"
               className="text-gray-200 hover:text-white transition">
