@@ -43,33 +43,17 @@ const LanguageSwitcher = () => {
     <div className="flex gap-4 items-center">
       <div className="relative">
         <button
-          className="flex items-center gap-2"
-          onClick={() => setShowMenu(!showMenu)}
-        >
-          <Image
-            className="max-w-8"
-            src={selectedLanguage.code === "bn" ? "/bd.png" : "/usa.png"}
-            alt="bangla"
-            height={100}
-            width={165}
-          />
-          {selectedLanguage.language}
+          className="flex items-center gap-2 text-white bg-slate-700 px-2 py-1 rounded-md"
+          onClick={() => setShowMenu(!showMenu)}>
+          <span>{selectedLanguage.code === 'bn' ? 'BN' : 'EN'}</span>
         </button>
         {showMenu && (
-          <div className="absolute border right-0 top-full mt-2 w-40 rounded-md dark:bg-body bg-white dark:text-white text-dark p-2 z-10 shadow-lg">
+          <div className="absolute border border-slate-700 right-0 top-full mt-5 w-40 rounded-md dark:bg-body bg-slate-700 dark:text-white text-dark p-2 z-10 shadow-lg">
             {languages.map((entry) => (
               <li
                 key={entry.code}
                 onClick={() => handleLanguageChange(entry.code)}
-                className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-gray-100 hover:text-dark"
-              >
-                <Image
-                  className="max-w-8"
-                  src={entry.code === "bn" ? "/bd.png" : "/usa.png"}
-                  alt="bangla"
-                  height={100}
-                  width={165}
-                />
+                className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-dark">
                 {entry.language}
               </li>
             ))}
@@ -77,7 +61,7 @@ const LanguageSwitcher = () => {
         )}
       </div>
     </div>
-  );
+  )
 };
 
 export default LanguageSwitcher;

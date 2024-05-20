@@ -1,6 +1,7 @@
 import AddToCart from '@/components/products/AddToCart'
 import Image from 'next/image'
 import WishlistItemRemove from './WishlistItemRemove'
+import Link from 'next/link'
 
 export default function WishlistItem({ wishlist, session }) {
   console.log('wishlist item', wishlist)
@@ -16,9 +17,11 @@ export default function WishlistItem({ wishlist, session }) {
         />
       </div>
       <div className="w-1/3">
+        <Link href={`/details/${wishlist?.id}`}>
         <h2 className="text-gray-800 text-xl font-medium uppercase">
           {wishlist?.title}
         </h2>
+        </Link>
         <p className="text-gray-500 text-sm">
           Availability: <span className="text-green-600">In Stock</span>
         </p>

@@ -14,7 +14,7 @@ export default function AddToWishList({ session, product, card }) {
         addItemToWishlist({
           id: product?.id,
           title: product?.title,
-          price: product?.price,
+          price: product?.discountPrice,
           images: product?.images[0],
           stock: product?.sku,
         })

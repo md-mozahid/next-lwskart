@@ -14,7 +14,10 @@ export default function ToastProvider({ children }) {
         newestOnTop={false}
         closeOnClick
         rtl={false}
-        theme="light"
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="colored"
       />
     </>
   )
