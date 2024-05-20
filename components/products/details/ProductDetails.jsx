@@ -1,20 +1,19 @@
-import { auth } from "@/auth";
-import { getBlurImage } from "@/utils/getBlurImage";
-import Image from "next/image";
-import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
-import { FaStar } from "react-icons/fa6";
-import AddToCart from "./AddToCart";
-import AddToWishList from "./AddToWishList";
-import ShareProduct from "./ShareProduct";
-import { getRatings } from "@/utils/getRatings";
-import { getProductStock } from "@/utils/getProductStock";
+import { auth } from '@/auth'
+import { getProductStock } from '@/utils/getProductStock'
+import { getRatings } from '@/utils/getRatings'
+import Link from 'next/link'
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa6'
+import AddToCart from '../AddToCart'
+import AddToWishList from '../AddToWishList'
+import QuantityBtn from '../QuantityBtn'
+import ShareProduct from '../ShareProduct'
+import ImageSection from './ImageSection'
 
 export default async function ProductDetails({ product }) {
-  // const { base64 } = await getBlurImage(product?.thumbnail)
-  const session = await auth();
-  const ratings = getRatings(product?.ratings);
-  const stock = getProductStock(product?.sku, product?.soldCounts);
+  const session = await auth()
+  const ratings = getRatings(product?.ratings)
+  const stock = getProductStock(product?.sku, product?.soldCounts)
   return (
     <>
       <div className="container py-4 flex items-center gap-3">
@@ -28,43 +27,7 @@ export default async function ProductDetails({ product }) {
       </div>
 
       <div className="container grid grid-cols-2 gap-6">
-        <div>
-          <Image
-            src={product?.images[0]}
-            alt={product?.title}
-            className="w-full"
-            width={900}
-            height={900}
-            // placeholder="blur"
-            // blurDataURL={base64}
-          />
-
-          <div className="grid grid-cols-5 gap-4 mt-4">
-            <Image
-              src={product?.images[0]}
-              alt="product2"
-              className="w-full cursor-pointer border border-primary"
-              width={500}
-              height={500}
-            />
-
-            <Image
-              src={product?.images[1]}
-              alt="product2"
-              className="w-full cursor-pointer border border-primary"
-              width={500}
-              height={500}
-            />
-
-            <Image
-              src={product?.images[2]}
-              alt="product2"
-              className="w-full cursor-pointer border border-primary"
-              width={500}
-              height={500}
-            />
-          </div>
-        </div>
+        <ImageSection product={product} />
 
         <div>
           <h2 className="text-3xl font-medium uppercase mb-2">
@@ -90,11 +53,7 @@ export default async function ProductDetails({ product }) {
           <div className="space-y-2">
             <p className="text-gray-800 font-semibold space-x-2">
               <span>Availability: </span>
-              {stock ? (
-                <span className="text-green-600">In Stock</span>
-              ) : (
-                <span className="text-green-600">Out of Stock</span>
-              )}
+              <span className="text-green-600">{stock}</span>
             </p>
             <p className="space-x-2">
               <span className="text-gray-800 font-semibold">Brand: </span>
@@ -124,17 +83,7 @@ export default async function ProductDetails({ product }) {
 
           <div className="mt-4">
             <h3 className="text-sm text-gray-800 uppercase mb-1">Quantity</h3>
-            <div className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
-              <div className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">
-                -
-              </div>
-              <div className="h-8 w-8 text-base flex items-center justify-center">
-                4
-              </div>
-              <div className="h-8 w-8 text-xl flex items-center justify-center cursor-pointer select-none">
-                +
-              </div>
-            </div>
+            <QuantityBtn  />
           </div>
 
           <div className="mt-6 flex items-center gap-3 border-b border-gray-200 pb-5 pt-5">
@@ -146,24 +95,21 @@ export default async function ProductDetails({ product }) {
           <div className="flex gap-3 mt-4">
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
-            >
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
               <i className="">
                 <FaFacebookF />
               </i>
             </Link>
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
-            >
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
               <i className="">
                 <FaTwitter />
               </i>
             </Link>
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
-            >
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
               <i className="">
                 <FaInstagram />
               </i>
@@ -172,5 +118,5 @@ export default async function ProductDetails({ product }) {
         </div>
       </div>
     </>
-  );
+  )
 }

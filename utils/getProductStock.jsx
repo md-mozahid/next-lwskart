@@ -1,6 +1,7 @@
 export const getProductStock = (sku, sold) => {
   if (sku > sold) {
-    return "In Stock";
+    return 'In Stock'
+  } else {
+    return 'Out of Stock'
   }
-  return "Out of Stock";
-};
+}

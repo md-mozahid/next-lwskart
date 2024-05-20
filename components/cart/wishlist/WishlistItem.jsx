@@ -3,11 +3,12 @@ import Image from 'next/image'
 import WishlistItemRemove from './WishlistItemRemove'
 
 export default function WishlistItem({ wishlist, session }) {
+  console.log('wishlist item', wishlist)
   return (
     <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
       <div className="w-28">
         <Image
-          src={wishlist?.thumbnail}
+          src={wishlist?.images}
           alt={wishlist?.title}
           className="w-full size-20"
           width={300}

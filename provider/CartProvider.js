@@ -6,6 +6,15 @@ import { useEffect, useState } from 'react'
 export default function CartProvider({ children }) {
   const [cart, setCart] = useState([])
   const [wishlist, setWishlist] = useState([])
+  const [count, setCount] = useState(1)
+
+  // handle cart item qty
+  const handleQtyIncrement = () => {
+    setCount((prev) => prev + 1)
+  }
+  const handleQtyDecrement = () => {
+    setCount((prev) => prev - 1)
+  }
 
   // fetch cart to state
   useEffect(() => {
@@ -35,19 +44,19 @@ export default function CartProvider({ children }) {
     id,
     title,
     price,
-    thumbnail,
-    stock,
+    images,
+    sku,
     quantity = 1,
   }) => {
     const item = {
       id,
       title,
       price,
-      thumbnail,
-      stock,
+      images,
+      sku,
       quantity,
     }
-
+console.log('add to cart', item)
     const isItemExist = cart?.cartItems?.find((i) => i.id === item.id)
 
     let newCartItems
@@ -72,15 +81,15 @@ export default function CartProvider({ children }) {
   }
 
   // add wish list
-  const addItemToWishlist = async ({ id, title, price, thumbnail, stock }) => {
+  const addItemToWishlist = async ({ id, title, price, images, stock }) => {
     const item = {
       id,
       title,
       price,
-      thumbnail,
+      images,
       stock,
     }
-
+console.log('add wishlist', item)
     const isItemExist = wishlist?.wishlistItems?.find((i) => i.id === item.id)
 
     let newWishlistItems
@@ -121,6 +130,9 @@ export default function CartProvider({ children }) {
         removeItemFromCart,
         addItemToWishlist,
         removeItemFromWishlist,
+        count,
+        handleQtyIncrement,
+        handleQtyDecrement
       }}>
       {children}
     </CartContext.Provider>

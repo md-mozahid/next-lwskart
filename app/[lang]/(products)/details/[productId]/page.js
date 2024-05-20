@@ -1,6 +1,6 @@
-import ProductDetails from '@/components/products/ProductDetails'
+import { getSingleProduct } from '@/backend/database/queries'
+import ProductDetails from '@/components/products/details/ProductDetails'
 import BreadCrumbs from '@/components/shared/BreadCrumbs'
-import { getSingleProduct } from "@/backend/database/queries";
 import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params: { productId } }) {

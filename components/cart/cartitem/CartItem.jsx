@@ -25,13 +25,13 @@ export default function CartItem({ item }) {
   }
 
   const stock = getProductStock(item?.sku, item?.soldCounts)
-  console.log(item)
+  
   return (
     <>
       <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
         <div className="w-28">
           <Image
-            src={item?.thumbnail}
+            src={item?.images}
             alt={item?.title}
             className="w-full size-20"
             width={300}

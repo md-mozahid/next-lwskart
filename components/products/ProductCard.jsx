@@ -1,16 +1,15 @@
-import { auth } from "@/auth";
-import { getBlurImage } from "@/utils/getBlurImage";
-import Image from "next/image";
-import Link from "next/link";
-import { FaMagnifyingGlass, FaStar } from "react-icons/fa6";
-import AddToCart from "./AddToCart";
-import AddToWishList from "./AddToWishList";
-import { getRatings } from "@/utils/getRatings";
+import { auth } from '@/auth'
+import { getRatings } from '@/utils/getRatings'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FaMagnifyingGlass, FaStar } from 'react-icons/fa6'
+import AddToCart from './AddToCart'
+import AddToWishList from './AddToWishList'
 
 export default async function ProductCard({ product }) {
   // const { base64 } = await getBlurImage(product?.thumbnail)
-  const session = await auth();
-  const ratings = getRatings(4);
+  const session = await auth()
+  const ratings = getRatings(4)
 
   return (
     <div className="bg-white shadow rounded overflow-hidden group">
@@ -28,8 +27,7 @@ export default async function ProductCard({ product }) {
           <Link
             href={`/details/${product?.id}`}
             className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-            title="view product"
-          >
+            title="view product">
             <i>
               <FaMagnifyingGlass />
             </i>
@@ -69,7 +67,7 @@ export default async function ProductCard({ product }) {
           </div>
         </div>
       </div>
-      <AddToCart session={session} product={product} className={"w-full"} />
+      <AddToCart session={session} product={product} className={'w-full'} />
     </div>
-  );
+  )
 }

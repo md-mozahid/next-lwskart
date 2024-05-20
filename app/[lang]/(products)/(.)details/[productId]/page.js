@@ -1,6 +1,6 @@
+import { getSingleProduct } from '@/backend/database/queries'
 import Modal from '@/components/modal/Modal'
-import ProductDetails from '@/components/products/ProductDetails'
-import { getSingleProduct } from "@/backend/database/queries";
+import ProductDetails from '@/components/products/details/ProductDetails'
 import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params: { productId }, parent }) {

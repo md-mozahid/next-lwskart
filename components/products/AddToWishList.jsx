@@ -8,14 +8,15 @@ import { toast } from 'react-toastify'
 export default function AddToWishList({ session, product, card }) {
     const router = useRouter()
     const { addItemToWishlist } = useCart()
+
     const handleClick = () => {
       if (session?.user) {
         addItemToWishlist({
           id: product?.id,
           title: product?.title,
           price: product?.price,
-          thumbnail: product?.thumbnail,
-          stock: product?.stock,
+          images: product?.images[0],
+          stock: product?.sku,
         })
         toast.success("Product added to wishlist.");
       } else {

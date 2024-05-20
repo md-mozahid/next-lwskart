@@ -31,9 +31,15 @@
   .input-box {
     @apply block w-full border border-gray-300 px-4 py-3 text-gray-600 text-sm rounded placeholder-gray-400 focus:border-primary focus:ring-0;
   }
+
   .btn-primary {
     @apply bg-primary border border-primary text-white px-6 py-2 font-medium rounded uppercase flex items-center justify-center gap-2 hover:bg-transparent hover:text-primary transition;
   }
+
+  .btn-secondary {
+    @apply bg-secondary border border-secondary text-white px-6 py-2 font-medium rounded uppercase flex items-center justify-center gap-2 hover:bg-transparent hover:text-secondary transition;
+  }
+
   .btn-fw {
     @apply w-full;
   }
