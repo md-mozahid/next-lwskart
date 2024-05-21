@@ -7,8 +7,11 @@ export default async function CartPage() {
   return (
     <>
       <BreadCrumb />
+
       {session?.user ? (
-        <Cart />
+        <>
+          <Cart />
+        </>
       ) : (
         <div className="text-center text-xl">
           Please login to see your cart items!

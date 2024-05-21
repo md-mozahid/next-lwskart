@@ -37,7 +37,7 @@ export default function AddToWishList({ session, product, card }) {
       ) : (
         <button
           onClick={handleClick}
-          className="border border-gray-300 text-gray-600 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary transition">
+          className="border border-gray-700 text-gray-700 px-8 py-2 font-medium rounded uppercase flex items-center gap-2 hover:text-primary transition">
           <i className="">
             <FaHeart />
           </i>

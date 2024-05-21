@@ -1,46 +1,47 @@
-'use client'
+"use client";
 
-import { login } from '@/app/actions'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { useFormStatus } from 'react-dom'
-import { toast } from 'react-toastify'
+import { login } from "@/app/actions";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useFormStatus } from "react-dom";
+import { toast } from "react-toastify";
 
 export default function LoginForm() {
-  const [error, setError] = useState('')
-  const router = useRouter()
+  const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleLogin = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      const formData = new FormData(e.currentTarget)
-      const response = await login(formData)
+      const formData = new FormData(e.currentTarget);
+      const response = await login(formData);
       // console.log(response)
       if (!!response.error) {
-        setError(response.error)
+        setError(response.error);
       } else {
-        router.push('/')
-        toast.success('Login successful.')
+        router.back();
+        toast.success("Login successful.");
       }
     } catch (err) {
-      setError(err)
+      setError(err);
     }
-  }
+  };
 
   // use form status hook
   function Button() {
-    const { pending } = useFormStatus()
+    const { pending } = useFormStatus();
     return (
       <button
         disabled={pending}
         type="submit"
         className={`${
-          pending ? 'bg-slate-500' : 'bg-primary'
-        } btn-primary btn-fw`}>
-        {pending ? 'Logging...' : 'Login'}
+          pending ? "bg-slate-500" : "bg-primary"
+        } btn-primary btn-fw`}
+      >
+        {pending ? "Logging..." : "Login"}
       </button>
-    )
+    );
   }
   return (
     <>
@@ -82,7 +83,8 @@ export default function LoginForm() {
             />
             <label
               htmlFor="remember"
-              className="text-gray-600 ml-3 cursor-pointer">
+              className="text-gray-600 ml-3 cursor-pointer"
+            >
               Remember me
             </label>
           </div>
@@ -95,5 +97,5 @@ export default function LoginForm() {
         </div>
       </form>
     </>
-  )
+  );
 }

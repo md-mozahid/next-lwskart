@@ -22,7 +22,7 @@ export default function Modal({ children }) {
     <dialog
       ref={modalRef}
       onClose={onHide}
-      className="w-[80%] shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-2 rounded-md dark:bg-black dark:bg-opacity-95 dark:text-gray-100">
+      className="w-[80%] shadow-teal-700 shadow-md border border-teal-600 flex flex-col p-2 rounded-md dark:bg-gray-300 dark:bg-opacity-95 dark:text-gray-700">
       <span onClick={onHide} className="flex justify-end cursor-pointer ">
         <Image
           className=""

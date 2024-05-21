@@ -9,7 +9,7 @@ export default function Footer() {
           <Image
             src="/images/logo.svg"
             alt="logo"
-            className="w-30"
+            className="w-36"
             width={500}
             height={500}
           />
