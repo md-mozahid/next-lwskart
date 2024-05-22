@@ -1,10 +1,12 @@
+import { getDictionaries } from '@/app/[lang]/dictionaries/getDictionaries'
 import Link from 'next/link'
 import SingIn from '../auth/SingIn'
 import LanguageSwitcher from '../lang/LanguageSwitcher'
 import Theme from '../theme/Theme'
 import Dropdown from './Dropdown'
 
-export default async function Navbar() {
+export default async function Navbar({ lang }) {
+  const dictionary = await getDictionaries(lang)
   return (
     <nav className="bg-gray-800">
       <div className="container flex">
@@ -23,23 +25,23 @@ export default async function Navbar() {
             <Link
               href="/"
               className="text-gray-200 hover:text-white transition">
-              Home
+              {dictionary?.home}
             </Link>
             <Link
               href="/shop"
               className="text-gray-200 hover:text-white transition">
-              Shop
+              {dictionary?.shop}
             </Link>
             <Link
               href="/about"
               className="text-gray-200 hover:text-white transition">
-              About us
+              {dictionary?.about}
             </Link>
 
             <Link
               href="/contact"
               className="text-gray-200 hover:text-white transition">
-              Contact us
+              {dictionary?.contact}
             </Link>
           </div>
           <div className="flex items-center justify-center gap-2">

@@ -9,8 +9,8 @@ export default function ProductAds() {
           src="/images/offer.jpg"
           alt="ads"
           className="w-full"
-          width={500}
-          height={500}
+          width={1200}
+          height={1200}
         />
       </Link>
     </div>

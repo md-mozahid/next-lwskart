@@ -1,7 +1,12 @@
-import { categoryModel } from "@/backend/models/category-model";
-import { productModel } from "@/backend/models/product-model";
-import connectMongo from "@/backend/services/connectMongo";
-import { replaceMongoIdInArray, replaceMongoIdInObject } from '@/utils/data-utils'
+import { cartModel } from '@/backend/models/cart-model'
+import { categoryModel } from '@/backend/models/category-model'
+import { productModel } from '@/backend/models/product-model'
+import { userModel } from '@/backend/models/user-model'
+import connectMongo from '@/backend/services/connectMongo'
+import {
+  replaceMongoIdInArray,
+  replaceMongoIdInObject,
+} from '@/utils/data-utils'
 
 export async function getAllProducts() {
   try {
@@ -45,4 +50,21 @@ export async function getAllCategories() {
   await connectMongo()
   const categories = await categoryModel.find().lean()
   return replaceMongoIdInArray(categories)
+}
+
+// get cart product
+export async function getCart(email) {
+  try {
+    await connectMongo()
+    const user = await userModel.findOne({ email: email })
+    const cart = await cartModel.findOne({ user: user._id })
+    // const userCart = allCartProduct.filter((cart) => cart.user === email)
+    // console.log('userCart', userCart)
+    if (cart) {
+      return replaceMongoIdInArray(cart)
+    }
+  } catch (error) {
+    console.error('Error fetching cart product:', error.message)
+    return null
+  }
 }

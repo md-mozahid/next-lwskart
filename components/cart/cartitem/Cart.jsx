@@ -1,16 +1,17 @@
-'use client'
-
-import { useCart } from '@/hooks/useCart'
+import { getCartProducts } from '@/app/actions'
+import { auth } from '@/auth'
 import CartItem from './CartItem'
+import { getCart } from '@/backend/database/queries'
 
-export default function Cart() {
-  const { cart } = useCart()
-
+export default async function Cart() {
+  const session = await auth()
+  const cartItems = await getCart(session?.user?.email)
+  console.log('cartItems', cartItems)
   return (
     <div className="container gap-6 pt-4 pb-16">
       <div className="mx-auto space-y-4 max-w-6xl">
-        {cart?.cartItems?.length > 0 ? (
-          cart?.cartItems?.map((item) => (
+        {cartItems?.length > 0 ? (
+          cartItems?.map((item) => (
             <CartItem key={item?.id} item={item} />
           ))
         ) : (

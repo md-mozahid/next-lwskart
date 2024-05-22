@@ -6,7 +6,7 @@ import { FaMagnifyingGlass, FaStar } from 'react-icons/fa6'
 import AddToCart from './AddToCart'
 import AddToWishList from './AddToWishList'
 
-export default async function ProductCard({ product }) {
+export default async function ProductCard({ product, dictionary }) {
   // const { base64 } = await getBlurImage(product?.thumbnail)
   const session = await auth()
   const ratings = getRatings(4)
@@ -63,11 +63,16 @@ export default async function ProductCard({ product }) {
             </span>
           </div>
           <div className="text-xs text-gray-500 ml-3">
-            ({product?.reviewsNumber} Reviews)
+            ({product?.reviewsNumber} {dictionary?.reviews})
           </div>
         </div>
       </div>
-      <AddToCart session={session} product={product} className={'w-full'} />
+      <AddToCart
+        session={session}
+        product={product}
+        className={'w-full'}
+        dictionary={dictionary}
+      />
     </div>
   )
 }

@@ -11,6 +11,7 @@ export const {
   auth,
   signIn,
   signOut,
+  
 } = NextAuth({
   adapter: MongoDBAdapter(clientPromise, {
     databaseName: process.env.ENVIRONMENT,

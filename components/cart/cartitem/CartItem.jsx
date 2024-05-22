@@ -1,3 +1,5 @@
+'use client'
+
 import { useCart } from '@/hooks/useCart'
 import { getProductStock } from '@/utils/getProductStock'
 import Image from 'next/image'
