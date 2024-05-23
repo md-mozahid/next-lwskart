@@ -7,7 +7,7 @@ import AddToCart from './AddToCart'
 import AddToWishList from './AddToWishList'
 
 export default async function ProductCard({ product, dictionary }) {
-  // const { base64 } = await getBlurImage(product?.thumbnail)
+  // const { base64 } = await getBlurImage(product?.images[0])
   const session = await auth()
   const ratings = getRatings(4)
 
