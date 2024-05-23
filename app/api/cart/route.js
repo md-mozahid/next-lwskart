@@ -15,7 +15,7 @@ export async function POST(request) {
 
     const user = await userModel.findOne({ email: email })
     let cart = await cartModel.findOne({ user: user?._id })
-    console.log('user', user)
+    // console.log('user', user)
 
     if (cart) {
       // if cart item exist the user

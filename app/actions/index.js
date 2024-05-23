@@ -1,33 +1,47 @@
-'use server'
+"use server";
 
-import { signIn } from '@/auth'
-import { baseUrl } from '@/utils/constants'
+import { signIn } from "@/auth";
+import { baseUrl } from "@/utils/constants";
 
 export async function login(formData) {
   try {
-    const response = await signIn('credentials', {
-      email: formData.get('email'),
-      password: formData.get('password'),
+    const response = await signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
       redirect: false,
-    })
-    return response
+    });
+    return response;
   } catch (error) {
-    console.log('error: ', error)
-    return { error: error.message }
+    console.log("error: ", error);
+    return { error: error.message };
   }
 }
 
 // get cart products
-export async function getCartItems(email = '') {
+export async function getCartItems(email = "") {
   try {
     const response = await fetch(
       `${baseUrl}/api/cart?email=${encodeURIComponent(email)}`
-    )
-    const data = await response.json()
-    return data
+    );
+    const data = await response.json();
+    return data;
   } catch (err) {
-    console.error('cart', err)
-    return { error: err.message }
+    console.error("cart", err);
+    return { error: err.message };
+  }
+}
+
+// get cart products
+export async function getWishlistItems(email = "") {
+  try {
+    const response = await fetch(
+      `${baseUrl}/api/wishlist?email=${encodeURIComponent(email)}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error("wishlist", err);
+    return { error: err.message };
   }
 }
 
@@ -35,32 +49,32 @@ export async function getCartItems(email = '') {
 export async function addOrder(body) {
   try {
     const res = await fetch(`${baseUrl}/api/order`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    })
-    const data = await res.json()
-    revalidatePath('/checkout')
-    return data
+    });
+    const data = await res.json();
+    revalidatePath("/checkout");
+    return data;
   } catch (error) {
-    console.log('error: ', error)
-    return { error: error.message }
+    console.log("error: ", error);
+    return { error: error.message };
   }
 }
 
 // get address
-export async function getAddress(email = '') {
+export async function getAddress(email = "") {
   try {
     const response = await fetch(
       `${baseUrl}/api/address?email=${encodeURIComponent(email)}`
-    )
-    const data = await response.json()
-    return data
+    );
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.log('error: ', error)
-    return { error: error.message }
+    console.log("error: ", error);
+    return { error: error.message };
   }
 }
 
@@ -68,17 +82,17 @@ export async function getAddress(email = '') {
 export async function addAddress(body) {
   try {
     const response = await fetch(`${baseUrl}/api/address`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
-    })
-    const data = await response.json()
-    revalidatePath('/checkout')
-    return data
+    });
+    const data = await response.json();
+    revalidatePath("/checkout");
+    return data;
   } catch (error) {
-    console.log('error: ', error)
-    return { error: error.message }
+    console.log("error: ", error);
+    return { error: error.message };
   }
 }
