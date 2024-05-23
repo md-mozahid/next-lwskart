@@ -27,7 +27,7 @@ export default function CartItem({ item }) {
   }
 
   const stock = getProductStock(item?.sku, item?.soldCounts)
-  
+  console.log(item)
   return (
     <>
       <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">

@@ -79,7 +79,8 @@ export async function GET(request) {
       sku: item?.product?.sku,
       price: item?.product?.price,
       category: item?.product?.category,
-      quantity: item.quantity,
+      quantity: item?.quantity,
+      images: item?.images
     }))
 
     return Response.json({
@@ -93,7 +94,7 @@ export async function GET(request) {
     return Response.json({
       success: false,
       status: 500,
-      message: 'Internal Server Error',
+      message: 'Cart fetched Error',
       data: null,
     })
   }

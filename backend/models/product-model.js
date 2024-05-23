@@ -43,7 +43,7 @@ const productSchema = new Schema({
   },
   images: [
     {
-      type: Array,
+      type: String,
       required: true,
     },
   ],
