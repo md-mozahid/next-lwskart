@@ -1,6 +1,9 @@
-import React from 'react'
+import React from "react";
+import Billing from "./checkout/Billing";
+import OrderSummary from "./checkout/OrderSummary";
+import Link from "next/link";
 
-export default function Billlws() {
+export default function Billings() {
   return (
     <>
       <div className="col-span-4 border border-gray-200 p-4 rounded">
@@ -22,8 +25,9 @@ export default function Billlws() {
           />
           <label
             for="agreement"
-            className="text-gray-600 ml-3 cursor-pointer text-sm">
-            I agree to the{' '}
+            className="text-gray-600 ml-3 cursor-pointer text-sm"
+          >
+            I agree to the{" "}
             <Link href="#" className="text-primary">
               terms & conditions
             </Link>
@@ -32,10 +36,11 @@ export default function Billlws() {
 
         <Link
           href="#"
-          className="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">
+          className="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium"
+        >
           Place order
         </Link>
       </div>
     </>
-  )
+  );
 }
