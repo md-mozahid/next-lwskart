@@ -16,21 +16,16 @@ export const ProductCategory = [
   },
   {
     id: 4,
-    label: 'Office',
-    name: 'office',
-  },
-  {
-    id: 5,
     label: 'Outdoor',
     name: 'outdoor',
   },
   {
-    id: 6,
+    id: 5,
     label: 'Kitchen',
     name: 'kitchen',
   },
   {
-    id: 7,
+    id: 6,
     label: 'Living Room',
     name: 'living room',
   },
