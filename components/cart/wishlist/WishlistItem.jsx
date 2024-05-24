@@ -4,7 +4,7 @@ import WishlistItemRemove from './WishlistItemRemove'
 import Link from 'next/link'
 
 export default function WishlistItem({ wishlist, session }) {
-  console.log('wishlist item', wishlist)
+  // console.log('wishlist item', wishlist)
   return (
     <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
       <div className="w-28">

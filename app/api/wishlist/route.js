@@ -7,7 +7,7 @@ export async function POST(request) {
   try {
     await connectMongo();
     const body = await request.json();
-    console.log("wishlistBody", body);
+    // console.log("wishlistBody", body);
     const email = body?.email;
     const productId = body?.productId;
     // const quantity = body?.quantity;

@@ -1,5 +1,4 @@
 import { auth } from '@/auth'
-import { getRatings } from '@/utils/getRatings'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaMagnifyingGlass, FaStar } from 'react-icons/fa6'
@@ -9,8 +8,11 @@ import AddToWishList from './AddToWishList'
 export default async function ProductCard({ product, dictionary }) {
   // const { base64 } = await getBlurImage(product?.images[0])
   const session = await auth()
-  const ratings = getRatings(4)
-
+  // console.log(product?.ratings)
+  // const ratings = getRatings(product?.ratings)
+  // const ratings = Array(Math.floor(product?.ratings))
+  // console.log('ratings', ratings)
+  const ratings = [1,2]
   return (
     <div className="bg-white shadow rounded overflow-hidden group">
       <div className="relative">

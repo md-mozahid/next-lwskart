@@ -8,7 +8,7 @@ import { FaRegTrashCan } from 'react-icons/fa6'
 import { toast } from 'react-toastify'
 
 export default function CartItem({ item }) {
-  const { addItemToCart, removeItemFromCart } = useCart()
+  const { addItemToCart } = useCart()
 
   const increaseProduct = (cartItem) => {
     const newProduct = cartItem?.quantity + 1
@@ -82,8 +82,15 @@ export default function CartItem({ item }) {
         <div className="text-gray-600 cursor-pointer mr-5 hover:text-primary">
           <i
             className="text-xl"
-            onClick={() => {
-              removeItemFromCart(item?.id)
+            onClick={async () => {
+              // removeItemFromCart(item?.id)
+              await fetch(`/api/cart/${item?._id}`, {
+                method: 'DELETE',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+              })
+
               toast.success('Product remove from cart.')
             }}>
             <FaRegTrashCan />
