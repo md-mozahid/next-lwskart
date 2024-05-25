@@ -56,4 +56,4 @@ const addressSchema = new Schema(
 )
 
 export const addressModel =
-  mongoose.model.address || mongoose.model('address', addressSchema)
+  mongoose.models.address || mongoose.model('address', addressSchema)

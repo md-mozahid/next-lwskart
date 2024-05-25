@@ -26,7 +26,7 @@ export default function AddToWishList({ session, product, card }) {
         });
         toast.success("Product added to wishlist.");
       } catch (error) {
-        console.error(err);
+        console.error(error);
       }
     } else {
       router.push("/login");

@@ -6,8 +6,8 @@ import connectMongo from '@/backend/services/connectMongo'
 export async function POST(request) {
   try {
     await connectMongo()
-    const body = await body.json()
-
+    const body = await request.json()
+    // console.log('body', body)
     const email = body?.email
     const title = body.title
     const contact = body.contact
@@ -64,7 +64,7 @@ export async function POST(request) {
       data: savedAddress,
     })
   } catch (error) {
-    console.error(err)
+    console.error(error)
     return Response.json({
       success: false,
       status: 500,
@@ -109,8 +109,8 @@ export async function GET(request) {
         data: address?.address,
       })
     }
-  } catch (err) {
-    console.error(err)
+  } catch (error) {
+    console.error(error)
     return Response.json({
       success: false,
       status: 500,
