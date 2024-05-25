@@ -21,6 +21,9 @@
 }
 
 @layer components {
+  .dark {
+    @apply bg-body text-white;
+}
   .size-selector input:checked + label {
     @apply bg-primary text-white;
   }

@@ -9,10 +9,6 @@ export default async function SingIn() {
     <>
       {session?.user ? (
         <div className="flex items-center justify-center">
-          <span className="text-white rounded-full border border-slate-700 size-10 flex items-center justify-center">
-            {session?.user?.name?.charAt(0)}
-          </span>
-          <span className="mx-2 text-white">|</span>
           <Logout />
         </div>
       ) : (

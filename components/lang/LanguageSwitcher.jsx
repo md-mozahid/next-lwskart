@@ -48,7 +48,7 @@ const LanguageSwitcher = () => {
           <span>{selectedLanguage.code === 'bn' ? 'BN' : 'EN'}</span>
         </button>
         {showMenu && (
-          <div className="absolute border border-slate-700 right-0 top-full mt-5 w-40 rounded-md dark:bg-body bg-slate-700 dark:text-white text-dark p-2 z-10 shadow-lg">
+          <div className="absolute border border-slate-700 right-0 top-full mt-5 w-40 rounded-md dark:bg-body bg-slate-700 dark:text-white text-white p-2 z-10 shadow-lg">
             {languages.map((entry) => (
               <li
                 key={entry.code}

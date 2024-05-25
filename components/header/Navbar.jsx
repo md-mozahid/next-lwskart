@@ -3,9 +3,12 @@ import Link from 'next/link'
 import SingIn from '../auth/SingIn'
 import LanguageSwitcher from '../lang/LanguageSwitcher'
 import Theme from '../theme/Theme'
-import Dropdown from './Dropdown'
+import Dropdown from '../shared/Dropdown'
+import Profile from './Profile'
+import { auth } from '@/auth'
 
 export default async function Navbar({ lang }) {
+  const session = await auth();
   const dictionary = await getDictionaries(lang)
   return (
     <nav className="bg-gray-800">
@@ -24,27 +27,32 @@ export default async function Navbar({ lang }) {
           <div className="flex items-center space-x-6 capitalize">
             <Link
               href="/"
-              className="text-gray-200 hover:text-white transition">
+              className="text-gray-200 hover:text-white transition"
+            >
               {dictionary?.home}
             </Link>
             <Link
               href="/shop"
-              className="text-gray-200 hover:text-white transition">
+              className="text-gray-200 hover:text-white transition"
+            >
               {dictionary?.shop}
             </Link>
             <Link
               href="/about"
-              className="text-gray-200 hover:text-white transition">
+              className="text-gray-200 hover:text-white transition"
+            >
               {dictionary?.about}
             </Link>
 
             <Link
               href="/contact"
-              className="text-gray-200 hover:text-white transition">
+              className="text-gray-200 hover:text-white transition"
+            >
               {dictionary?.contact}
             </Link>
           </div>
           <div className="flex items-center justify-center gap-2">
+            <Profile session={session} />
             <SingIn />
             <LanguageSwitcher />
             <Theme />
@@ -52,5 +60,5 @@ export default async function Navbar({ lang }) {
         </div>
       </div>
     </nav>
-  )
+  );
 }
