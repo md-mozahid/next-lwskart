@@ -1,4 +1,5 @@
 import { getSingleProduct } from '@/backend/database/queries'
+import Details from '@/components/products/details/Details'
 import ProductDetails from '@/components/products/details/ProductDetails'
 import BreadCrumbs from '@/components/shared/BreadCrumbs'
 import { notFound } from 'next/navigation'

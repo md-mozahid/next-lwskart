@@ -1,26 +1,62 @@
 import { auth } from '@/auth'
 import { getProductStock } from '@/utils/getProductStock'
 import { getRatings } from '@/utils/getRatings'
+import Image from 'next/image'
 import Link from 'next/link'
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { FaStar } from 'react-icons/fa6'
 import AddToCart from '../AddToCart'
 import AddToWishList from '../AddToWishList'
+import ProductCard from '../ProductCard'
 import QuantityBtn from '../QuantityBtn'
 import ShareProduct from '../ShareProduct'
-import ImageSection from './ImageSection'
-import RelatedProducts from './RelatedProducts'
 import Description from './Description'
 
-export default async function ProductDetails({ product }) {
+export default async function Details({ product }) {
   const session = await auth()
   const ratings = getRatings(product?.ratings)
   const stock = getProductStock(product?.sku, product?.soldCounts)
-  // console.log(product)
   return (
     <>
-      <div className="container grid grid-cols-2 gap-6">
-        <ImageSection product={product} />
+      {/* <!-- product-detail --> */}
+      <div class="container grid grid-cols-2 gap-6">
+        <div>
+          <Image
+            src={product?.images[0]}
+            alt={product?.title}
+            className="w-full"
+            width={900}
+            height={900}
+            // placeholder="blur"
+            // blurDataURL={base64}
+          />
+
+          <div className="grid grid-cols-5 gap-4 mt-4">
+            <Image
+              src={product?.images[0]}
+              alt="product2"
+              className="w-full cursor-pointer border border-primary"
+              width={500}
+              height={500}
+            />
+
+            <Image
+              src={product?.images[1]}
+              alt="product2"
+              className="w-full cursor-pointer border border-primary"
+              width={500}
+              height={500}
+            />
+
+            <Image
+              src={product?.images[2]}
+              alt="product2"
+              className="w-full cursor-pointer border border-primary"
+              width={500}
+              height={500}
+            />
+          </div>
+        </div>
 
         <div>
           <h2 className="text-3xl font-medium uppercase mb-2">
@@ -110,8 +146,21 @@ export default async function ProductDetails({ product }) {
           </div>
         </div>
       </div>
+      {/* <!-- ./product-detail --> */}
+
+      {/* <!-- description --> */}
       <Description />
-      <RelatedProducts relatedProduct ={product?.category} />
+      {/* <!-- ./description --> */}
+
+      {/* <!-- related product --> */}
+      <div class="container pb-16">
+        <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">
+          Related products
+        </h2>
+        <div class="grid grid-cols-4 gap-6">
+          <ProductCard />
+        </div>
+      </div>
     </>
   )
 }

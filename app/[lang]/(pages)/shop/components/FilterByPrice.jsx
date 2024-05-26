@@ -43,7 +43,7 @@ export default function FilterByPrice() {
       }
     }
     router.push(`${pathName}?${params.toString()}`)
-    inputRef.current.reset()
+    // inputRef.current.reset()
   }
 
   return (

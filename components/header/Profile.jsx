@@ -1,19 +1,28 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from 'react'
 
 export default function Profile({ session }) {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const modalRef = useRef(null)
+
+  const closeModal = () => {
+    setShowMenu(false)
+  }
+
+  useEffect(() => {
+    window.removeEventListener('mouseover', closeModal)
+  }, [])
   return (
     <>
       {session?.user && (
         <>
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center" ref={modalRef}>
             <div className="relative">
               <span
                 onClick={() => setShowMenu(!showMenu)}
-                className="text-white dark:text-white rounded-full border border-slate-700 size-10 flex items-center justify-center cursor-pointer"
-              >
+                className="text-white dark:text-white rounded-full border border-slate-700 size-10 flex items-center justify-center cursor-pointer">
                 {session?.user?.name?.charAt(0)}
               </span>
               {showMenu && (
@@ -37,5 +46,5 @@ export default function Profile({ session }) {
         </>
       )}
     </>
-  );
+  )
 }
