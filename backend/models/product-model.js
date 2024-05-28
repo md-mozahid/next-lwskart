@@ -1,7 +1,11 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema } from 'mongoose'
 
 const productSchema = new Schema({
   title: {
+    type: String,
+    required: true,
+  },
+  thumbnail: {
     type: String,
     required: true,
   },
@@ -21,8 +25,8 @@ const productSchema = new Schema({
     type: Number,
     required: true,
   },
-  availability: {
-    type: Boolean,
+  stock: {
+    type: Number,
     required: true,
   },
   brand: {
@@ -33,10 +37,12 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
-  details: {
-    type: Object,
-    required: true,
-  },
+  tags: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
   description: {
     type: String,
     required: true,
@@ -47,31 +53,23 @@ const productSchema = new Schema({
       required: true,
     },
   ],
-  productCode: {
-    type: String,
-    required: true,
-  },
-  sizes: [
-    {
-      type: Array,
-      required: true,
-    },
-  ],
-  colors: [
-    {
-      type: Array,
-      required: true,
-    },
-  ],
   sku: {
-    type: Number,
+    type: String,
     required: true,
   },
   soldCounts: {
     type: Number,
     required: true,
   },
-});
+  isTrending: {
+    type: Boolean,
+    required: true,
+  },
+  isNewArrival: {
+    type: Boolean,
+    required: true,
+  },
+})
 
 export const productModel =
-  mongoose.models.products ?? mongoose.model("products", productSchema);
+  mongoose.models.products ?? mongoose.model('products', productSchema)

@@ -84,12 +84,14 @@ export default function CartItem({ item }) {
             className="text-xl"
             onClick={async () => {
               // removeItemFromCart(item?.id)
-              await fetch(`/api/cart/${item?._id}`, {
-                method: 'DELETE',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-              })
+              // await fetch(`/api/cart/${item?._id}`, {
+              //   method: 'DELETE',
+              //   headers: {
+              //     'Content-Type': 'application/json',
+              //   },
+              // })
+
+              // await removeCartItem(item?.id)
 
               toast.success('Product remove from cart.')
             }}>

@@ -68,5 +68,24 @@ need more 10 product in below example,
     tag
   },
 
-
-
+need 5 outdoor product in below example,
+"thumbnail": ""
+{
+  "_id": {
+      "$oid": ""
+    },
+    "title": "",
+    "description": "",
+    "price": ,
+    "discountPrice": ,
+    "stock": ,
+    "isTrending": "",
+    "isNewArrival": "",
+    "tags": [],
+    "images": [],
+    "sku": "",
+    "brand": "",
+    "thumbnail": "",
+    "averageRating": ,
+    "reviewCount": ,
+  },

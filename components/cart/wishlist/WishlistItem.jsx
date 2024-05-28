@@ -2,14 +2,16 @@ import AddToCart from '@/components/products/AddToCart'
 import Image from 'next/image'
 import WishlistItemRemove from './WishlistItemRemove'
 import Link from 'next/link'
+import { getProductStock } from '@/utils/getProductStock'
 
 export default function WishlistItem({ wishlist, session }) {
-  // console.log('wishlist item', wishlist)
+  console.log('wishlist item', wishlist)
+  const stock = getProductStock(wishlist?.stock, wishlist?.soldCounts)
   return (
     <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
       <div className="w-28">
         <Image
-          src={wishlist?.images}
+          src={wishlist?.thumbnail}
           alt={wishlist?.title}
           className="w-full size-20"
           width={300}
@@ -23,7 +25,7 @@ export default function WishlistItem({ wishlist, session }) {
         </h2>
         </Link>
         <p className="text-gray-500 text-sm">
-          Availability: <span className="text-green-600">In Stock</span>
+          Availability: <span className="text-green-600">{stock}</span>
         </p>
       </div>
       <div className="text-primary text-lg font-semibold">

@@ -14,9 +14,12 @@ import Description from './Description'
 
 export default async function ProductDetails({ product }) {
   const session = await auth()
-  const ratings = getRatings(product?.ratings)
-  const stock = getProductStock(product?.sku, product?.soldCounts)
+  const ratings = getRatings(product?.averageRating)
+  console.log('product', product)
+  // console.log('ratings', ratings)
+  const stock = getProductStock(product?.stock, product?.soldCounts)
   // console.log(product)
+  // const ratings =[1,2]
   return (
     <>
       <div className="container grid grid-cols-2 gap-6">
@@ -28,7 +31,7 @@ export default async function ProductDetails({ product }) {
           </h2>
           <div className="flex items-center mb-4">
             <div className="flex items-center gap-1 text-sm text-orange-400">
-              {ratings.map((r, i) => (
+              {ratings.map((_, i) => (
                 <span key={i}>
                   <i>
                     <FaStar />
@@ -36,11 +39,11 @@ export default async function ProductDetails({ product }) {
                 </span>
               ))}
               <span className="text-xs lg:text-sm">
-                ({`${product?.ratings} Star`})
+                ({`${product?.averageRating} Star`})
               </span>
             </div>
             <div className="text-xs text-gray-500 ml-3">
-              ({product?.reviewsNumber} Reviews)
+              ({product?.reviewCount} Reviews)
             </div>
           </div>
           <div className="space-y-2">
@@ -111,7 +114,7 @@ export default async function ProductDetails({ product }) {
         </div>
       </div>
       <Description />
-      <RelatedProducts relatedProduct ={product?.category} />
+      <RelatedProducts relatedProduct={product?.category} />
     </>
   )
 }

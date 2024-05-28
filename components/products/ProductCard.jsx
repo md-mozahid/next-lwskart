@@ -4,21 +4,22 @@ import Link from 'next/link'
 import { FaMagnifyingGlass, FaStar } from 'react-icons/fa6'
 import AddToCart from './AddToCart'
 import AddToWishList from './AddToWishList'
+import { getRatings } from '@/utils/getRatings'
 
 export default async function ProductCard({ product, dictionary }) {
   // console.log(product)
   // const { base64 } = await getBlurImage(product?.images[0])
   const session = await auth()
   // console.log(product?.ratings)
-  // const ratings = getRatings(product?.ratings)
+  const ratings = getRatings(product?.averageRating)
   // const ratings = Array(Math.floor(product?.ratings))
   // console.log('ratings', ratings)
-  const ratings = [1,2]
+  // const ratings = [1,2]
   return (
     <div className="bg-white shadow rounded overflow-hidden group">
       <div className="relative">
         <Image
-          src={product?.images[0]}
+          src={product?.thumbnail}
           alt={product?.title}
           className="w-full h-64"
           width={900}
@@ -54,7 +55,7 @@ export default async function ProductCard({ product, dictionary }) {
         </div>
         <div className="flex items-center">
           <div className="flex justify-center items-center gap-1 text-sm text-orange-400">
-            {ratings.map((r, i) => (
+            {ratings.map((_, i) => (
               <span key={i}>
                 <i>
                   <FaStar />
@@ -62,11 +63,11 @@ export default async function ProductCard({ product, dictionary }) {
               </span>
             ))}
             <span className="text-xs lg:text-sm">
-              ({`${product?.ratings} Star`})
+              ({`${product?.averageRating} Star`})
             </span>
           </div>
           <div className="text-xs text-gray-500 ml-3">
-            ({product?.reviewsNumber} {dictionary?.reviews})
+            ({product?.reviewCount} {dictionary?.reviews})
           </div>
         </div>
       </div>
