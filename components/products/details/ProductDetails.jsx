@@ -15,11 +15,8 @@ import Description from './Description'
 export default async function ProductDetails({ product }) {
   const session = await auth()
   const ratings = getRatings(product?.averageRating)
-  console.log('product', product)
-  // console.log('ratings', ratings)
   const stock = getProductStock(product?.stock, product?.soldCounts)
-  // console.log(product)
-  // const ratings =[1,2]
+
   return (
     <>
       <div className="container grid grid-cols-2 gap-6">

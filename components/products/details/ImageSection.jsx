@@ -1,8 +1,9 @@
+import { getBlurImage } from '@/utils/getBlurImage'
 import Image from 'next/image'
 import React from 'react'
 
-export default function ImageSection({product}) {
-  // const { base64 } = await getBlurImage(product?.images[0])
+export default async function ImageSection({product}) {
+  const { base64 } = await getBlurImage(product?.thumbnail);
   return (
     <div>
       <Image
@@ -11,8 +12,8 @@ export default function ImageSection({product}) {
         className="w-full"
         width={900}
         height={900}
-        // placeholder="blur"
-        // blurDataURL={base64}
+        placeholder="blur"
+        blurDataURL={base64}
       />
 
       <div className="grid grid-cols-5 gap-4 mt-4">

@@ -67,6 +67,7 @@ export default function CartSection({ session, cart, wishlist }) {
       </button>
 
       {/* account */}
+      {session?.user && 
       <button
         onClick={() => handleClick("account")}
         className="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300 hover:text-primary transition"
@@ -75,7 +76,7 @@ export default function CartSection({ session, cart, wishlist }) {
           <i className="fa-regular fa-user"></i>
         </div>
         <div className="text-[14px] leading-3">Account</div>
-      </button>
+      </button>}
     </div>
   );
 }

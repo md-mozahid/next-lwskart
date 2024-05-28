@@ -1,31 +1,35 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
 export default function Profile({ session }) {
-  const [showMenu, setShowMenu] = useState(false)
-  const [showModal, setShowModal] = useState(false)
-  const modalRef = useRef(null)
-
-  const closeModal = () => {
-    setShowMenu(false)
-  }
+  const [show, setShow] = useState(false);
+  const profileRef = useRef(null);
 
   useEffect(() => {
-    window.removeEventListener('mouseover', closeModal)
-  }, [])
+    const handleClickOutSide = (e) => {
+      if (profileRef.current && !profileRef.current.contains(e.target))
+        setShow(false);
+    };
+    document.addEventListener("mousedown", handleClickOutSide);
+
+    //  clean
+    return () => document.removeEventListener("mousedown", handleClickOutSide);
+  }, []);
+
   return (
     <>
       {session?.user && (
         <>
-          <div className="flex gap-4 items-center" ref={modalRef}>
+          <div className="flex gap-4 items-center" ref={profileRef}>
             <div className="relative">
               <span
-                onClick={() => setShowMenu(!showMenu)}
-                className="text-white dark:text-white rounded-full border border-slate-700 size-10 flex items-center justify-center cursor-pointer">
+                onClick={() => setShow(!show)}
+                className="text-white dark:text-white rounded-full border border-slate-700 size-10 flex items-center justify-center cursor-pointer"
+              >
                 {session?.user?.name?.charAt(0)}
               </span>
-              {showMenu && (
+              {show && (
                 <div className="absolute text-white border border-slate-700 right-0 top-full mt-5 w-40 rounded-md dark:bg-body bg-slate-700 dark:text-white  p-2 z-10 shadow-lg">
                   <ul>
                     <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-dark">
@@ -46,5 +50,5 @@ export default function Profile({ session }) {
         </>
       )}
     </>
-  )
+  );
 }
