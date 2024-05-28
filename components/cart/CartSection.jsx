@@ -1,14 +1,15 @@
 "use client";
 
 import { getCartItems } from "@/app/actions";
+import { useCart } from "@/hooks/useCart";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
 
 export default function CartSection({ session, cart, wishlist }) {
-  const [cartItems, setCartItems] = useState("");
-  // console.log(cartItems)
+  const { totalCart, setTotalCart } = useCart();
   const router = useRouter();
+
   const handleClick = (query) => {
     if (session?.user) {
       router.push(`/${query}`);
@@ -18,32 +19,18 @@ export default function CartSection({ session, cart, wishlist }) {
   };
 
   useEffect(() => {
-    const cartItems = async () => {
-      const data = await getCartItems(session?.user?.email);
-      setCartItems(data?.data);
-    };
-    cartItems();
-  }, [session?.user?.email]);
+    fetchData();
+  }, [totalCart]);
 
-  // useEffect(() => {
-  //   const getCartItems = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `${baseUrl}/api/cart?email=${encodeURIComponent(
-  //           session?.user?.email
-  //         )}`
-  //       );
-  //       const data = await response.json();
-  //       return data;
-  //     } catch (error) {
-  //       console.error("cart", error);
-  //       return { error: error.message };
-  //     }
-  //   };
-  //   getCartItems();
-  // }, [session?.user?.email]);
+  // cart data fetch
+  const fetchData = async () => {
+    if (session?.user?.email) {
+      const cart = await getCartItems(session?.user?.email);
+      // console.log("cart", cart);
+      setTotalCart(cart?.data?.length);
+    }
+  };
 
-  // console.log(data)
   return (
     <div className="flex items-center space-x-4">
       {/* wishlist */}
@@ -75,7 +62,7 @@ export default function CartSection({ session, cart, wishlist }) {
           </i>
         </div>
         <div className="absolute -right-3 -top-3 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-white text-xs">
-          {(session?.user && cartItems?.length) || 0}
+          {(session?.user && totalCart) || 0}
         </div>
       </button>
 

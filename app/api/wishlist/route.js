@@ -74,6 +74,7 @@ export async function GET(request) {
       .populate('wishlistItems.product')
 
     const data = wishlist?.wishlistItems.map((item) => ({
+      id: item?.product?.id,
       title: item?.product?.title,
       price: item?.product?.price,
       category: item?.product?.category,

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { getProductStock } from '@/utils/getProductStock'
 
 export default function WishlistItem({ wishlist, session }) {
-  console.log('wishlist item', wishlist)
+  // console.log('wishlistitem', wishlist)
   const stock = getProductStock(wishlist?.stock, wishlist?.soldCounts)
   return (
     <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">

@@ -1,39 +1,57 @@
-'use client'
+"use client";
 
-import { useCart } from '@/hooks/useCart'
-import { getProductStock } from '@/utils/getProductStock'
-import Image from 'next/image'
-import Link from 'next/link'
-import { FaRegTrashCan } from 'react-icons/fa6'
-import { toast } from 'react-toastify'
+import { useCart } from "@/hooks/useCart";
+import { getProductStock } from "@/utils/getProductStock";
+import Image from "next/image";
+import Link from "next/link";
+import { FaRegTrashCan } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 export default function CartItem({ item }) {
-  const { addItemToCart } = useCart()
+  const { totalCart, setTotalCart } = useCart();
+  // console.log(totalCart)
+  // console.log(item)
+  const increaseProduct = async (cartItem) => {
+    const newProduct = cartItem?.quantity + 1;
+    const product = { ...cartItem, quantity: newProduct };
+    // console.log(product);
+    if (newProduct > cartItem?.stock) return;
 
-  const increaseProduct = (cartItem) => {
-    const newProduct = cartItem?.quantity + 1
-    const product = { ...cartItem, quantity: newProduct }
-    if (newProduct > cartItem?.stock) return
-
-    addItemToCart(product)
-  }
+    try {
+      const response = await fetch("/api/cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // email: session?.user?.email,
+          // productId: product?.id,
+          quantity: product.quantity,
+          // thumbnail: product?.thumbnail,
+        }),
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const decreaseProduct = (cartItem) => {
-    const newProduct = cartItem?.quantity - 1
-    const product = { ...cartItem, quantity: newProduct }
-    if (newProduct <= 0) return
+    const newProduct = cartItem?.quantity - 1;
+    const product = { ...cartItem, quantity: newProduct };
+    console.log("minus", product);
+    if (newProduct <= 0) return;
 
-    addItemToCart(product)
-  }
+    addItemToCart(product);
+  };
 
-  const stock = getProductStock(item?.sku, item?.soldCounts)
+  const stock = getProductStock(item?.stock, item?.soldCounts);
   // console.log(item)
   return (
     <>
       <div className="flex items-center justify-between border gap-6 p-4 border-gray-200 rounded">
         <div className="w-28">
           <Image
-            src={item?.images}
+            src={item?.thumbnail}
             alt={item?.title}
             className="w-full size-20"
             width={300}
@@ -47,7 +65,7 @@ export default function CartItem({ item }) {
             </h2>
           </Link>
           <p className="text-gray-500 text-sm">
-            Availability:{' '}
+            Availability:{" "}
             {stock ? (
               <span className="text-green-600">In Stock</span>
             ) : (
@@ -58,7 +76,8 @@ export default function CartItem({ item }) {
         <div className="text-primary text-lg font-semibold bg-slate-700 px-3 py-1 rounded-md">
           <button
             onClick={() => decreaseProduct(item)}
-            className="text-2xl text-slate-100">
+            className="text-2xl text-slate-100"
+          >
             -
           </button>
           <span className="mx-5 border border-slate-500 px-2 rounded">
@@ -66,13 +85,14 @@ export default function CartItem({ item }) {
           </span>
           <button
             onClick={() => increaseProduct(item)}
-            className="text-2xl text-slate-100">
+            className="text-2xl text-slate-100"
+          >
             +
           </button>
         </div>
         <div className="text-primary text-lg font-semibold flex flex-col">
           <span>
-            <span className="text-slate-500">$</span>{' '}
+            <span className="text-slate-500">$</span>{" "}
             {(item?.price * item?.quantity).toFixed(2)}
           </span>
           <span className="text-sm text-slate-500">
@@ -93,12 +113,13 @@ export default function CartItem({ item }) {
 
               // await removeCartItem(item?.id)
 
-              toast.success('Product remove from cart.')
-            }}>
+              toast.success("Product remove from cart.");
+            }}
+          >
             <FaRegTrashCan />
           </i>
         </div>
       </div>
     </>
-  )
+  );
 }

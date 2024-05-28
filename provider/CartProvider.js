@@ -1,140 +1,19 @@
-'use client'
+"use client";
 
-import { CartContext } from '@/context'
-import { useEffect, useState } from 'react'
+import { CartContext } from "@/context";
+import { useState } from "react";
 
 export default function CartProvider({ children }) {
-  const [cart, setCart] = useState([])
-  const [wishlist, setWishlist] = useState([])
-  const [count, setCount] = useState(1)
-
-  // handle cart item qty
-  const handleQtyIncrement = () => {
-    setCount((prev) => prev + 1)
-  }
-  const handleQtyDecrement = () => {
-    setCount((prev) => prev - 1)
-  }
-
-  // fetch cart to state
-  useEffect(() => {
-    setCartToState()
-    setWishlistToState()
-  }, [])
-
-  // set cart to state
-  const setCartToState = () => {
-    setCart(
-      localStorage.getItem('cart')
-        ? JSON.parse(localStorage.getItem('cart'))
-        : []
-    )
-  }
-
-  const setWishlistToState = () => {
-    setWishlist(
-      localStorage.getItem('wishlist')
-        ? JSON.parse(localStorage.getItem('wishlist'))
-        : []
-    )
-  }
-
-  // add item to cart
-  const addItemToCart = async ({
-    id,
-    title,
-    price,
-    images,
-    sku,
-    quantity = 1,
-  }) => {
-    const item = {
-      id,
-      title,
-      price,
-      images,
-      sku,
-      quantity,
-    }
-console.log('add to cart', item)
-    const isItemExist = cart?.cartItems?.find((i) => i.id === item.id)
-
-    let newCartItems
-
-    if (isItemExist) {
-      newCartItems = cart?.cartItems?.map((i) =>
-        i.id === isItemExist.id ? item : i
-      )
-    } else {
-      newCartItems = [...(cart?.cartItems || []), item]
-    }
-
-    localStorage.setItem('cart', JSON.stringify({ cartItems: newCartItems }))
-    setCartToState()
-  }
-
-  // remove item
-  const removeItemFromCart = (id) => {
-    const newCartItems = cart?.cartItems?.filter((item) => item?.id !== id)
-    localStorage.setItem('cart', JSON.stringify({ cartItems: newCartItems }))
-    setCartToState()
-  }
-
-  // add wish list
-  const addItemToWishlist = async ({ id, title, price, images, stock }) => {
-    const item = {
-      id,
-      title,
-      price,
-      images,
-      stock,
-    }
-console.log('add wishlist', item)
-    const isItemExist = wishlist?.wishlistItems?.find((i) => i.id === item.id)
-
-    let newWishlistItems
-
-    if (isItemExist) {
-      newWishlistItems = wishlist?.wishlistItems?.map((i) =>
-        i.id === isItemExist.id ? item : i
-      )
-    } else {
-      newWishlistItems = [...(wishlist?.wishlistItems || []), item]
-    }
-
-    localStorage.setItem(
-      'wishlist',
-      JSON.stringify({ wishlistItems: newWishlistItems })
-    )
-    setWishlistToState()
-  }
-
-  // remove wishlist item
-  const removeItemFromWishlist = (id) => {
-    const newWishlistItem = wishlist?.wishlistItems?.filter(
-      (item) => item?.id !== id
-    )
-    localStorage.setItem(
-      'wishlist',
-      JSON.stringify({ wishlistItems: newWishlistItem })
-    )
-    setWishlistToState()
-  }
+  const [totalCart, setTotalCart] = useState(null);
 
   return (
     <CartContext.Provider
       value={{
-        cart,
-        wishlist,
-        addItemToCart,
-        removeItemFromCart,
-        addItemToWishlist,
-        removeItemFromWishlist,
-        count,
-        handleQtyIncrement,
-        handleQtyDecrement
-      }}>
+        totalCart,
+        setTotalCart,
+      }}
+    >
       {children}
     </CartContext.Provider>
-  )
+  );
 }

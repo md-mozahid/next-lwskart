@@ -75,12 +75,14 @@ export async function GET(request) {
       .populate('cartItems.product')
 
     const data = cart.cartItems.map((item) => ({
+      id: item?.product?.id,
       title: item?.product?.title,
-      sku: item?.product?.sku,
+      stock: item?.product?.stock,
+      soldCounts: item?.product?.soldCounts,
       price: item?.product?.price,
       category: item?.product?.category,
+      thumbnail: item?.product?.thumbnail,
       quantity: item?.quantity,
-      images: item?.images
     }))
 
     return Response.json({
