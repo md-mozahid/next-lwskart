@@ -6,10 +6,10 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { FaCartShopping, FaHeart } from "react-icons/fa6";
 
-export default function CartSection({ session, cart, wishlist }) {
+export default function CartSection({ session, wishlist }) {
   const { totalCart, setTotalCart } = useCart();
   const router = useRouter();
-
+console.log(totalCart)
   const handleClick = (query) => {
     if (session?.user) {
       router.push(`/${query}`);
