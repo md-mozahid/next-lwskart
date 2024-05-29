@@ -1,13 +1,19 @@
-import { getBlurImage } from '@/utils/getBlurImage'
-import Image from 'next/image'
-import React from 'react'
+'use client'
 
-export default async function ImageSection({product}) {
+import Image from 'next/image'
+import { useState } from 'react'
+
+export default function ImageSection({ product }) {
+  const [thumbnail, setThumbnail] = useState(null)
   // const { base64 } = await getBlurImage(product?.thumbnail);
+
+   const handleImage = (img) => {
+     setThumbnail(img)
+   }
   return (
     <div>
       <Image
-        src={product?.thumbnail}
+        src={`${thumbnail ? thumbnail : product?.thumbnail}`}
         alt={product?.title}
         className="w-full"
         width={900}
@@ -17,29 +23,18 @@ export default async function ImageSection({product}) {
       />
 
       <div className="grid grid-cols-5 gap-4 mt-4">
-        <Image
-          src={product?.images[0]}
-          alt="product2"
-          className="w-full cursor-pointer border border-primary"
-          width={500}
-          height={500}
-        />
-
-        <Image
-          src={product?.images[1]}
-          alt="product2"
-          className="w-full cursor-pointer border border-primary"
-          width={500}
-          height={500}
-        />
-
-        <Image
-          src={product?.images[2]}
-          alt="product2"
-          className="w-full cursor-pointer border border-primary"
-          width={500}
-          height={500}
-        />
+        {product?.images &&
+          product?.images.map((img) => (
+            <Image
+              key={img}
+              src={img}
+              width={100}
+              height={100}
+              className="w-full cursor-pointer border border-primary"
+              alt="product image"
+              onClick={() => handleImage(img)}
+            />
+          ))}
       </div>
     </div>
   )
