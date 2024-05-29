@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function Profile({ session }) {
@@ -30,17 +31,19 @@ export default function Profile({ session }) {
                 {session?.user?.name?.charAt(0)}
               </span>
               {show && (
-                <div className="absolute text-white border border-slate-700 right-0 top-full mt-5 w-40 rounded-md dark:bg-body bg-slate-700 dark:text-white  p-2 z-10 shadow-lg">
+                <div className="absolute text-white border border-slate-700 right-0 top-full mt-5 w-64 rounded-md dark:bg-body bg-slate-700 dark:text-white  p-2 z-10 shadow-lg">
                   <ul>
-                    <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-dark">
-                      Name
+                    <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-white">
+                      Name: {session?.user?.name}
                     </li>
-                    <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-dark">
-                      Email
+                    <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-white">
+                      Email: {session?.user?.email}
                     </li>
-                    <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-dark">
-                      Account
-                    </li>
+                    <Link href={"account"}>
+                      <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-white">
+                        Account
+                      </li>
+                    </Link>
                   </ul>
                 </div>
               )}

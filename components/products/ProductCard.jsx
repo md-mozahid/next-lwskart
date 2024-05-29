@@ -8,7 +8,7 @@ import { getRatings } from "@/utils/getRatings";
 import { getBlurImage } from "@/utils/getBlurImage";
 
 export default async function ProductCard({ product, dictionary }) {
-  const { base64 } = await getBlurImage(product?.thumbnail);
+  // const { base64 } = await getBlurImage(product?.thumbnail);
   const session = await auth();
   const ratings = getRatings(product?.averageRating);
 
@@ -21,8 +21,8 @@ export default async function ProductCard({ product, dictionary }) {
           className="w-full h-64"
           width={900}
           height={900}
-          placeholder="blur"
-          blurDataURL={base64}
+          // placeholder="blur"
+          // blurDataURL={base64}
         />
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
           <Link
