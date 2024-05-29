@@ -1,44 +1,49 @@
-"use client";
+'use client'
 
-import { getCartItems } from "@/app/actions";
-import { useCart } from "@/hooks/useCart";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import { getCartItems } from '@/app/actions'
+import { useCart } from '@/hooks/useCart'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+import { FaCartShopping, FaHeart } from 'react-icons/fa6'
 
 export default function CartSection({ session, wishlist }) {
-  const { totalCart, setTotalCart } = useCart();
-  const router = useRouter();
-console.log(totalCart)
+  const { totalCart, setTotalCart } = useCart()
+  const router = useRouter()
+  // console.log(totalCart)
   const handleClick = (query) => {
     if (session?.user) {
-      router.push(`/${query}`);
+      router.push(`/${query}`)
     } else {
-      router.push("/login");
+      router.push('/login')
     }
-  };
+  }
 
   useEffect(() => {
-    fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [totalCart]);
+    const fetchData = async () => {
+      if (session?.user?.email) {
+        const cart = await getCartItems(session?.user?.email)
+        // console.log("cart", cart);
+        setTotalCart(cart?.data?.length)
+      }
+    }
+    fetchData()
+  }, [session?.user?.email, setTotalCart])
 
   // cart data fetch
-  const fetchData = async () => {
-    if (session?.user?.email) {
-      const cart = await getCartItems(session?.user?.email);
-      // console.log("cart", cart);
-      setTotalCart(cart?.data?.length);
-    }
-  };
+  // const fetchData = async () => {
+  //   if (session?.user?.email) {
+  //     const cart = await getCartItems(session?.user?.email);
+  //     // console.log("cart", cart);
+  //     setTotalCart(cart?.data?.length);
+  //   }
+  // };
 
   return (
     <div className="flex items-center space-x-4">
       {/* wishlist */}
       <button
-        onClick={() => handleClick("wishlist")}
-        className="text-center text-gray-700 hover:text-primary transition relative"
-      >
+        onClick={() => handleClick('wishlist')}
+        className="text-center text-gray-700 hover:text-primary transition relative">
         <div className="text-[24px]">
           <i>
             <FaHeart />
@@ -51,9 +56,8 @@ console.log(totalCart)
 
       {/* cart items */}
       <button
-        onClick={() => handleClick("cart")}
-        className="text-center text-gray-700 hover:text-primary transition relative"
-      >
+        onClick={() => handleClick('cart')}
+        className="text-center text-gray-700 hover:text-primary transition relative">
         <div className="text-2xl">
           <i className="fa-solid fa-bag-shopping"></i>
         </div>
@@ -68,16 +72,16 @@ console.log(totalCart)
       </button>
 
       {/* account */}
-      {session?.user && 
-      <button
-        onClick={() => handleClick("account")}
-        className="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300 hover:text-primary transition"
-      >
-        <div className="text-2xl">
-          <i className="fa-regular fa-user"></i>
-        </div>
-        <div className="text-[14px] leading-3">Account</div>
-      </button>}
+      {session?.user && (
+        <button
+          onClick={() => handleClick('account')}
+          className="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300 hover:text-primary transition">
+          <div className="text-2xl">
+            <i className="fa-regular fa-user"></i>
+          </div>
+          <div className="text-[14px] leading-3">Account</div>
+        </button>
+      )}
     </div>
-  );
+  )
 }
