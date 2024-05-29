@@ -1,21 +1,21 @@
-import { auth } from '@/auth'
-import { getProductStock } from '@/utils/getProductStock'
-import { getRatings } from '@/utils/getRatings'
-import Link from 'next/link'
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
-import { FaStar } from 'react-icons/fa6'
-import AddToCart from '../AddToCart'
-import AddToWishList from '../AddToWishList'
-import QuantityBtn from '../QuantityBtn'
-import ShareProduct from '../ShareProduct'
-import ImageSection from './ImageSection'
-import RelatedProducts from './RelatedProducts'
-import Description from './Description'
+import { auth } from "@/auth";
+import { getProductStock } from "@/utils/getProductStock";
+import { getRatings } from "@/utils/getRatings";
+import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaStar } from "react-icons/fa6";
+import AddToCart from "../AddToCart";
+import AddToWishList from "../AddToWishList";
+import QuantityBtn from "../QuantityBtn";
+import ShareProduct from "../ShareProduct";
+import ImageSection from "./ImageSection";
+import RelatedProducts from "./RelatedProducts";
+import Description from "./Description";
 
-export default async function ProductDetails({ product }) {
-  const session = await auth()
-  const ratings = getRatings(product?.averageRating)
-  const stock = getProductStock(product?.stock, product?.soldCounts)
+export default async function ProductDetails({ product, dictionary }) {
+  const session = await auth();
+  const ratings = getRatings(product?.averageRating);
+  const stock = getProductStock(product?.stock, product?.soldCounts);
 
   return (
     <>
@@ -80,29 +80,40 @@ export default async function ProductDetails({ product }) {
           </div>
 
           <div className="mt-6 flex items-center gap-3 border-b border-gray-200 pb-5 pt-5">
-            <AddToCart session={session} product={product} />
-            <AddToWishList session={session} product={product} />
+            <AddToCart
+              session={session}
+              product={product}
+              dictionary={dictionary}
+            />
+            <AddToWishList
+              session={session}
+              product={product}
+              dictionary={dictionary}
+            />
             <ShareProduct />
           </div>
 
           <div className="flex gap-3 mt-4">
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
+            >
               <i className="">
                 <FaFacebookF />
               </i>
             </Link>
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
+            >
               <i className="">
                 <FaTwitter />
               </i>
             </Link>
             <Link
               href="#"
-              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center">
+              className="text-gray-400 hover:text-gray-500 h-8 w-8 rounded-full border border-gray-300 flex items-center justify-center"
+            >
               <i className="">
                 <FaInstagram />
               </i>
@@ -113,5 +124,5 @@ export default async function ProductDetails({ product }) {
       <Description />
       <RelatedProducts relatedProduct={product?.category} />
     </>
-  )
+  );
 }

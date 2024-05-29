@@ -1,3 +1,4 @@
+import { getDictionaries } from '@/app/[lang]/dictionaries/getDictionaries'
 import { getSingleProduct } from '@/backend/database/queries'
 import Details from '@/components/products/details/Details'
 import ProductDetails from '@/components/products/details/ProductDetails'
@@ -6,6 +7,7 @@ import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params: { productId } }) {
   const product = await getSingleProduct(productId)
+  
 
   if (product) {
     return {
@@ -34,15 +36,16 @@ export async function generateMetadata({ params: { productId } }) {
   }
 }
 
-export default async function ProductDetailsPage({ params: { productId } }) {
+export default async function ProductDetailsPage({ params: { productId, lang } }) {
   const product = await getSingleProduct(productId)
+  const dictionary = await getDictionaries(lang);
   if (!product) {
     notFound()
   }
   return (
     <>
       <BreadCrumbs />
-      <ProductDetails product={product} />
+      <ProductDetails product={product} dictionary={dictionary} />
     </>
-  )
+  );
 }

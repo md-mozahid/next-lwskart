@@ -39,7 +39,7 @@ export default function Profile({ session }) {
                     <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-white">
                       Email: {session?.user?.email}
                     </li>
-                    <Link href={"account"}>
+                    <Link href="/account">
                       <li className="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-slate-600 hover:text-white">
                         Account
                       </li>
