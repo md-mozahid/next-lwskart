@@ -20,6 +20,7 @@ export default function CartSection({ session, cart, wishlist }) {
 
   useEffect(() => {
     fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [totalCart]);
 
   // cart data fetch

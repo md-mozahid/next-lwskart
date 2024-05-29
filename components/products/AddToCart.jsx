@@ -45,6 +45,7 @@ export default function AddToCart({ session, product, className, dictionary }) {
         <FaBagShopping />
       </i>
       {dictionary?.add_to_card}
+      {/* {dictionary ? dictionary?.add_to_card : 'Add to Cart'} */}
     </button>
   );
 }
